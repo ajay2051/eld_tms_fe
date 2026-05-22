@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import type { FormEvent, ChangeEvent } from "react";
+import axios, { AxiosError } from "axios";
 
 const PAGE_STYLES = `
   @import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
@@ -97,6 +98,8 @@ const PAGE_STYLES = `
   }
 `;
 
+// ─── Types ────────────────────────────────────────────────────────────────────
+
 interface FormState {
     email: string;
     password: string;
@@ -106,7 +109,53 @@ interface FormState {
 interface FormErrors {
     email?: string;
     password?: string;
+    non_field?: string;
 }
+
+interface LoginResponseUser {
+    first_name: string;
+    last_name: string;
+    user_number: string;
+    email: string;
+    role: string;
+    user_id: number | string;
+    last_login: string;
+    timezone: string;
+}
+
+interface LoginResponse {
+    message: string;
+    access: string;
+    refresh: string;
+    data: { email: string; password?: string };
+    user: LoginResponseUser;
+}
+
+// ─── API ──────────────────────────────────────────────────────────────────────
+
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
+async function loginUser(
+    email: string,
+    password: string
+): Promise<LoginResponse> {
+    const response = await axios.post<LoginResponse>(
+        `${API_BASE_URL}/auth/login/`, // adjust path to match your Django URL
+        { email, password },
+        { headers: { "Content-Type": "application/json" } }
+    );
+    return response.data;
+}
+
+function persistAuthData(data: LoginResponse): void {
+    localStorage.setItem("access_token", data.access);
+    localStorage.setItem("first_name", data.user.first_name ?? "");
+    localStorage.setItem("last_name", data.user.last_name ?? "");
+    localStorage.setItem("email", data.user.email ?? "");
+    localStorage.setItem("user_id", String(data.user.user_id ?? ""));
+}
+
+// ─── Component ────────────────────────────────────────────────────────────────
 
 function LoginForm() {
     const [form, setForm] = useState<FormState>({ email: "", password: "", remember: false });
@@ -145,14 +194,56 @@ function LoginForm() {
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
         if (!validate()) return;
+
         setLoading(true);
-        await new Promise((res) => setTimeout(res, 1800));
-        setLoading(false);
-        setSuccess(true);
+        setErrors({});
+
+        try {
+            const data = await loginUser(form.email, form.password);
+            persistAuthData(data);
+            setSuccess(true);
+            // Navigate to dashboard — replace with your router's navigate() if using React Router
+            // e.g. navigate("/dashboard")
+            window.location.href = "/dashboard";
+        } catch (err) {
+            const axiosErr = err as AxiosError<Record<string, string | string[]>>;
+            const responseData = axiosErr.response?.data;
+
+            if (responseData) {
+                const nextErrors: FormErrors = {};
+
+                if (responseData.email) {
+                    nextErrors.email = Array.isArray(responseData.email)
+                        ? responseData.email[0]
+                        : responseData.email;
+                }
+                if (responseData.password) {
+                    nextErrors.password = Array.isArray(responseData.password)
+                        ? responseData.password[0]
+                        : responseData.password;
+                }
+                if (responseData.non_field_errors) {
+                    nextErrors.non_field = Array.isArray(responseData.non_field_errors)
+                        ? responseData.non_field_errors[0]
+                        : (responseData.non_field_errors as string);
+                }
+                // DRF ValidationError sometimes wraps in detail
+                if (responseData.detail && !nextErrors.email && !nextErrors.password) {
+                    nextErrors.non_field = responseData.detail as string;
+                }
+
+                setErrors(nextErrors);
+            } else {
+                setErrors({ non_field: "Something went wrong. Please try again." });
+            }
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
-        <div className="flex flex-col justify-center px-10 sm:px-14 py-14 h-full max-w-2xl w-full mx-auto">            {/* Logo */}
+        <div className="flex flex-col justify-center px-10 sm:px-14 py-14 h-full max-w-2xl w-full mx-auto">
+            {/* Logo */}
             <div className="flex items-center gap-2.5 mb-10">
                 <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-400 to-teal-600 flex items-center justify-center shadow-md shadow-cyan-500/30">
                     <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5">
@@ -192,6 +283,17 @@ function LoginForm() {
                 </div>
             ) : (
                 <form onSubmit={handleSubmit} noValidate className="space-y-5">
+
+                    {/* Non-field / server error banner */}
+                    {errors.non_field && (
+                        <div className="lp-animate-fade-in rounded-xl border border-rose-500/30 bg-rose-500/8 px-4 py-3 text-xs text-rose-400 flex items-center gap-2">
+                            <svg viewBox="0 0 12 12" className="w-3.5 h-3.5 flex-shrink-0">
+                                <circle cx="6" cy="6" r="5" stroke="#f87171" strokeWidth="1.2"/>
+                                <path d="M6 4v3M6 8.5v.5" stroke="#f87171" strokeWidth="1.2" strokeLinecap="round"/>
+                            </svg>
+                            {errors.non_field}
+                        </div>
+                    )}
 
                     {/* Social sign-in */}
                     <div className="lp-animate-slide-up lp-d2 grid grid-cols-2 gap-3">
@@ -288,7 +390,7 @@ function LoginForm() {
                                 name="password"
                                 value={form.password}
                                 onChange={handleChange}
-                                placeholder="••••••••"
+                                placeholder="????????"
                                 className={`lp-input w-full rounded-xl pl-10 pr-12 py-3 text-sm text-white ${errors.password ? "border-rose-500/60" : ""}`}
                                 autoComplete="current-password"
                             />
@@ -364,8 +466,8 @@ function LoginForm() {
                     {/* Sign up link */}
                     <p className="lp-animate-slide-up lp-d6 text-center text-sm text-slate-500">
                         Don't have an account?{" "}
-                        <a href="#" className="text-cyan-400 hover:text-cyan-300 font-medium transition-colors">
-                            Request access
+                        <a href="/register" className="text-cyan-400 hover:text-cyan-300 font-medium transition-colors">
+                            Request Access
                         </a>
                     </p>
                 </form>
