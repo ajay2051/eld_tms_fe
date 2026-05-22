@@ -2,6 +2,8 @@ import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import Home from "./pages/home.tsx";
 import LoginPage from "./pages/login.tsx";
 import Navbar from "./components/navbar.tsx";
+import UserVerified from "./pages/user_verified.tsx";
+import NotFound from "./pages/not_found.tsx";
 
 
 // Routes where Navbar and Footer should NOT appear
@@ -17,6 +19,10 @@ function Layout() {
             <Routes>
                 <Route path="/"      element={<Home />} />
                 <Route path="/login" element={<LoginPage />} />
+                <Route path="/verified" element={<UserVerified />} />
+
+
+                <Route path="*"        element={<NotFound />}     />
             </Routes>
             {/*{!isBare && <Footer />}*/}
         </>

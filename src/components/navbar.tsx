@@ -79,7 +79,7 @@ function NavDropdown({ label, sub }: NavDropdownProps) {
 
 function Logo() {
     return (
-        <a href="#" className="flex items-center gap-2.5 group">
+        <a href="/" className="flex items-center gap-2.5 group">
             <div className="relative">
                 <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-400 to-teal-600 flex items-center justify-center shadow-lg shadow-cyan-500/30">
                     <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5">
