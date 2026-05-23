@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import useAuthGuard from "../middleware/authguard.tsx";
+import axiosInstance from "../middleware/axiosinterceptor.tsx";
 
 // ─── Style injection ──────────────────────────────────────────────────────────
 
@@ -194,6 +195,7 @@ const PAGE_STYLES = `
 // ─── Constants ────────────────────────────────────────────────────────────────
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL as string;
+const TOKEN_KEY    = "access_token";
 
 // OSRM public routing API (free, no key needed)
 const OSRM_BASE    = "https://router.project-osrm.org/route/v1/driving";
@@ -224,7 +226,6 @@ interface ToastMsg {
     type:    "success" | "error" | "info";
     message: string;
 }
-
 
 // ─── Leaflet dynamic import helper ───────────────────────────────────────────
 // Leaflet must be imported dynamically to avoid SSR issues and so we can
@@ -330,6 +331,7 @@ export default function RoutePage() {
     const [pinMode,   setPinMode]   = useState<PinMode>(null);
     const [routeStats,setRouteStats]= useState<RouteStats | null>(null);
     const [loading,   setLoading]   = useState<{ route: boolean; save: boolean }>({ route: false, save: false });
+    const [routeSaved, setRouteSaved] = useState<boolean>(false);
     const [toasts,    setToasts]    = useState<ToastMsg[]>([]);
     const [mapReady,  setMapReady]  = useState(false);
 
@@ -543,13 +545,13 @@ export default function RoutePage() {
             return;
         }
 
-        const token = localStorage.getItem('access_token') || sessionStorage.getItem('access_token');
+        const token = localStorage.getItem(TOKEN_KEY) || sessionStorage.getItem(TOKEN_KEY);
         if (!token) { navigate("/login"); return; }
 
         setLoading(prev => ({ ...prev, save: true }));
 
         try {
-            await axios.post(
+            await axiosInstance.post(
                 `${API_BASE_URL}/route/create/`,
                 {
                     current_location: {
@@ -568,6 +570,7 @@ export default function RoutePage() {
                 { headers: { Authorization: `Bearer ${token}` } }
             );
             addToast("success", "Route saved successfully!");
+            setRouteSaved(true);
         } catch {
             addToast("error", "Failed to save route. Please try again.");
         } finally {
@@ -599,6 +602,7 @@ export default function RoutePage() {
         setLocs({ current: null, pickup: null, dropoff: null });
         setRouteStats(null);
         setPinMode(null);
+        setRouteSaved(false);
     }, []);
 
     const allSet = locs.current && locs.pickup && locs.dropoff;
@@ -846,6 +850,25 @@ export default function RoutePage() {
                                     </>
                                 )}
                             </button>
+
+                            {/* Create Driver Log — shown after route is saved */}
+                            {routeSaved && (
+                                <button
+                                    onClick={() => navigate("/driver-log")}
+                                    className="w-full rounded-xl py-3 text-sm font-semibold flex items-center justify-center gap-2 rm-fade-in"
+                                    style={{
+                                        background: "linear-gradient(135deg,#fbbf24,#f59e0b)",
+                                        boxShadow: "0 0 20px rgba(251,191,36,0.4)",
+                                        color: "#040f16",
+                                    }}
+                                >
+                                    <svg viewBox="0 0 16 16" fill="none" className="w-4 h-4">
+                                        <rect x="2" y="2" width="12" height="13" rx="1.5" stroke="currentColor" strokeWidth="1.4"/>
+                                        <path d="M5 5h6M5 8h6M5 11h3" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round"/>
+                                    </svg>
+                                    Create Driver Log
+                                </button>
+                            )}
 
                             {/* Clear all */}
                             {(locs.current || locs.pickup || locs.dropoff) && (
