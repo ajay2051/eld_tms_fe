@@ -374,7 +374,7 @@ function LoginForm() {
                     <div className="lp-animate-slide-up lp-d4">
                         <div className="flex items-center justify-between mb-1.5">
                             <label className="text-xs font-medium text-slate-400 uppercase tracking-wider">Password</label>
-                            <a href="#" className="text-xs text-cyan-400 hover:text-cyan-300 transition-colors">
+                            <a href="/forgot-password" className="text-xs text-cyan-400 hover:text-cyan-300 transition-colors">
                                 Forgot password?
                             </a>
                         </div>
