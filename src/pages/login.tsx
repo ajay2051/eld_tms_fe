@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import type { FormEvent, ChangeEvent } from "react";
 import axios, { AxiosError } from "axios";
+import {useNavigate} from "react-router-dom";
 
 const PAGE_STYLES = `
   @import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
@@ -169,6 +170,8 @@ function LoginForm() {
         emailRef.current?.focus();
     }, []);
 
+    const navigate = useNavigate();
+
     const validate = (): boolean => {
         const errs: FormErrors = {};
         if (!form.email.trim()) {
@@ -200,11 +203,15 @@ function LoginForm() {
 
         try {
             const data = await loginUser(form.email, form.password);
+
             persistAuthData(data);
             setSuccess(true);
-            // Navigate to dashboard — replace with your router's navigate() if using React Router
-            // e.g. navigate("/dashboard")
-            window.location.href = "/dashboard";
+
+            if (data.user.role === "driver") {
+                navigate("/route");
+            } else if (data.user.role === "admin") {
+                navigate("/dashboard");
+            }
         } catch (err) {
             const axiosErr = err as AxiosError<Record<string, string | string[]>>;
             const responseData = axiosErr.response?.data;

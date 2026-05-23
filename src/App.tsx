@@ -7,10 +7,11 @@ import NotFound from "./pages/not_found.tsx";
 import RegisterPage from "./pages/register.tsx";
 import ForgotPasswordConfirmPage from "./pages/forgot_password_confirm.tsx";
 import ForgotPasswordPage from "./pages/forgot_password.tsx";
+import RoutePage from "./pages/routecreate.tsx";
 
 
 // Routes where Navbar and Footer should NOT appear
-const BARE_ROUTES = ["/login", "/register", "/forgot-password", "/forgot-password-confirm"];
+const BARE_ROUTES = ["/login", "/register", "/forgot-password", "/forgot-password-confirm", "/route"];
 
 function Layout() {
     const { pathname } = useLocation();
@@ -20,16 +21,17 @@ function Layout() {
         <>
             {!isBare && <Navbar />}
             <Routes>
-                <Route path="/"      element={<Home />} />
-                <Route path="/login" element={<LoginPage />} />
-                <Route path="/register"  element={<RegisterPage />} />
-                <Route path="/verified" element={<UserVerified />} />
-                <Route path="/forgot-password" element={<ForgotPasswordPage />} />
-                <Route path="/forgot-password-confirm"  element={<ForgotPasswordConfirmPage />} />
-                <Route path="/forgot-password-confirm/" element={<ForgotPasswordConfirmPage />} />
+                <Route path="/"      element={<Home />}/>
+                <Route path="/login" element={<LoginPage />}/>
+                <Route path="/register"  element={<RegisterPage />}/>
+                <Route path="/verified" element={<UserVerified />}/>
+                <Route path="/forgot-password" element={<ForgotPasswordPage />}/>
+                <Route path="/forgot-password-confirm"  element={<ForgotPasswordConfirmPage />}/>
+                <Route path="/forgot-password-confirm/" element={<ForgotPasswordConfirmPage />}/>
+                <Route path="/route"                    element={<RoutePage />} />
 
 
-                <Route path="*"        element={<NotFound />}     />
+                <Route path="*"        element={<NotFound />}/>
             </Routes>
             {/*{!isBare && <Footer />}*/}
         </>
