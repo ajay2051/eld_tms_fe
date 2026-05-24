@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import type { FormEvent, ChangeEvent } from "react";
 import axios, { AxiosError } from "axios";
-import {useNavigate} from "react-router-dom";
 
 const PAGE_STYLES = `
   @import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
@@ -150,6 +149,13 @@ async function loginUser(
 
 function persistAuthData(data: LoginResponse): void {
     localStorage.setItem("access_token", data.access);
+    localStorage.setItem("refresh_token", data.refresh);
+
+    // Store the full user object — your route guard checks for this key
+    localStorage.setItem("user", JSON.stringify(data.user));
+
+    // Keep individual fields if needed elsewhere
+    localStorage.setItem("role", data.user.role ?? "");
     localStorage.setItem("first_name", data.user.first_name ?? "");
     localStorage.setItem("last_name", data.user.last_name ?? "");
     localStorage.setItem("email", data.user.email ?? "");
@@ -169,8 +175,6 @@ function LoginForm() {
     useEffect(() => {
         emailRef.current?.focus();
     }, []);
-
-    const navigate = useNavigate();
 
     const validate = (): boolean => {
         const errs: FormErrors = {};
@@ -203,15 +207,21 @@ function LoginForm() {
 
         try {
             const data = await loginUser(form.email, form.password);
-
             persistAuthData(data);
             setSuccess(true);
 
-            if (data.user.role === "driver") {
-                navigate("/route");
-            } else if (data.user.role === "admin") {
-                navigate("/dashboard");
-            }
+            setTimeout(() => {
+                switch (data.user.role) {
+                    case "driver":
+                        window.location.replace("/route");
+                        break;
+                    case "admin":
+                        window.location.replace("/dashboard");
+                        break;
+                    default:
+                        window.location.replace("/");
+                }
+            }, 500); // small delay so the success state renders
         } catch (err) {
             const axiosErr = err as AxiosError<Record<string, string | string[]>>;
             const responseData = axiosErr.response?.data;

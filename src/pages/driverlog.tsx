@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import type { ChangeEvent, FormEvent } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import {
     LineChart, Line, XAxis, YAxis, CartesianGrid,
@@ -12,6 +12,7 @@ import axiosInstance from "../middleware/axiosinterceptor.tsx";
 // ─── Style injection ──────────────────────────────────────────────────────────
 
 const PAGE_STYLES = `
+html, body, #root { background: #040f16 !important; min-height: 100%; margin: 0; padding: 0; }
   @import url('https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap');
 
   .dl-root * { font-family: 'DM Sans', sans-serif; }
@@ -189,9 +190,6 @@ const PAGE_STYLES = `
 `;
 
 // ─── Constants ────────────────────────────────────────────────────────────────
-
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL as string;
-
 // HOS status rows matching the physical log book
 const HOS_ROWS = [
     { key: "off",     label: "1: OFF DUTY",             color: "#fbbf24", cellClass: "dl-hos-cell-active-off"     },
@@ -403,7 +401,7 @@ function HOSGridEditor({
     const [isDrawing, setIsDrawing]       = useState(false);
     const [drawValue, setDrawValue]       = useState(true);
 
-    // Build recharts data from grid — y axis: 0=off,1=sleeper,2=driving,3=onduty
+    // Build recharts data from grid — y axis: 0=onduty,1=driving,2=sleeper,3=off
     const STATUS_LABELS: Record<number, string> = { 0: "On Duty", 1: "Driving", 2: "Sleeper", 3: "Off Duty" };
 
     const chartData = Array.from({ length: TOTAL_CELLS }, (_, i) => {
@@ -833,7 +831,9 @@ function LogCard({
 // ─── Main Page ────────────────────────────────────────────────────────────────
 
 export default function DriverLogPage() {
-    const navigate = useNavigate();
+    const navigate  = useNavigate();
+    const location  = useLocation();
+    const routeId   = (location.state as { route_id?: number } | null)?.route_id ?? null;
 
     const [logs,      setLogs]      = useState<LogEntry[]>([emptyLog()]);
     const [allErrors, setAllErrors] = useState<LogErrors[]>([{}]);
@@ -917,16 +917,23 @@ export default function DriverLogPage() {
         const token = getAccessToken();
         if (!token) { navigate("/login"); return; }
 
+        if (!routeId) {
+            addToast("error", "No route linked. Please save a route first before creating driver logs.");
+            return;
+        }
+
         setLoading(true);
 
-        // Build payload — strip local-only fields (id, hosGrid)
-        const payload = logs.map(({ id: _id, hosGrid: _g, ...rest }) => rest);
+        // Build payload — strip local-only fields (id, hosGrid), inject route_id
+        const payload = logs.map(({ id: _id, hosGrid: _g, ...rest }) => ({
+            ...rest,
+            route: routeId,          // backend FK field
+        }));
 
         try {
             await axiosInstance.post(
-                `${API_BASE_URL}/log/create/`,
-                payload,
-                { headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" } }
+                "/log/create/",
+                payload
             );
             addToast("success", `${logs.length} driver log${logs.length > 1 ? "s" : ""} saved successfully!`);
             // Reset to a fresh single log
@@ -1067,7 +1074,7 @@ export default function DriverLogPage() {
             <div className="relative max-w-6xl mx-auto px-4 sm:px-6 py-8">
 
                 {/* Page header */}
-                <div className="dl-slide-up dl-d1 mb-8">
+                <div className="dl-slide-up dl-d1 mb-6">
                     <div className="inline-flex items-center gap-2 dl-glass-sm rounded-full px-3 py-1 text-xs font-medium text-amber-300 mb-4">
                         <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
                         ELD — Electronic Logging Device
@@ -1080,6 +1087,47 @@ export default function DriverLogPage() {
                         You can add multiple logs for the same route.
                     </p>
                 </div>
+
+                {/* Route link banner */}
+                {routeId ? (
+                    <div className="dl-slide-up dl-d2 dl-glass-sm rounded-2xl px-5 py-3.5 mb-6 flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-lg bg-cyan-500/15 border border-cyan-500/30 flex items-center justify-center flex-shrink-0">
+                            <svg viewBox="0 0 16 16" fill="none" className="w-4 h-4 text-cyan-400">
+                                <path d="M2 12 Q6 4 10 8 Q14 12 14 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <p className="text-xs text-slate-400 uppercase tracking-wider">Linked Route</p>
+                            <p className="text-sm text-cyan-300 font-medium font-mono">Route #{routeId}</p>
+                        </div>
+                        <div className="ml-auto">
+              <span className="text-[10px] text-emerald-400 bg-emerald-500/10 border border-emerald-500/25 rounded-full px-2.5 py-1 font-medium">
+                ✓ Linked
+              </span>
+                        </div>
+                    </div>
+                ) : (
+                    <div className="dl-slide-up dl-d2 rounded-2xl px-5 py-3.5 mb-6 flex items-start gap-3"
+                         style={{ background:"rgba(251,191,36,0.08)", border:"1px solid rgba(251,191,36,0.28)" }}>
+                        <svg viewBox="0 0 20 20" fill="none" className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5">
+                            <path d="M10 2L2 17h16L10 2z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"/>
+                            <path d="M10 8v4M10 14.5v.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                        </svg>
+                        <div>
+                            <p className="text-sm text-amber-300 font-medium">No route linked</p>
+                            <p className="text-xs text-amber-400/70 mt-0.5">
+                                You must save a route first before creating driver logs.{" "}
+                                <button
+                                    type="button"
+                                    onClick={() => navigate("/route")}
+                                    className="underline hover:text-amber-300 transition-colors"
+                                >
+                                    Go to Route Planner →
+                                </button>
+                            </p>
+                        </div>
+                    </div>
+                )}
 
                 {/* Stats bar */}
                 <div className="dl-slide-up dl-d2 grid grid-cols-3 gap-3 mb-8">

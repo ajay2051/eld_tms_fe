@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import useAuthGuard from "../middleware/authguard.tsx";
 import axiosInstance from "../middleware/axiosinterceptor.tsx";
 
 // ─── Style injection ──────────────────────────────────────────────────────────
@@ -193,8 +192,6 @@ const PAGE_STYLES = `
 `;
 
 // ─── Constants ────────────────────────────────────────────────────────────────
-
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL as string;
 const TOKEN_KEY    = "access_token";
 
 // OSRM public routing API (free, no key needed)
@@ -225,6 +222,18 @@ interface ToastMsg {
     id:      number;
     type:    "success" | "error" | "info";
     message: string;
+}
+
+// ─── Auth guard ───────────────────────────────────────────────────────────────
+
+function useAuthGuard() {
+    const navigate = useNavigate();
+    useEffect(() => {
+        const token = localStorage.getItem(TOKEN_KEY) || sessionStorage.getItem(TOKEN_KEY);
+        if (!token) {
+            navigate("/login", { replace: true });
+        }
+    }, [navigate]);
 }
 
 // ─── Leaflet dynamic import helper ───────────────────────────────────────────
@@ -331,7 +340,8 @@ export default function RoutePage() {
     const [pinMode,   setPinMode]   = useState<PinMode>(null);
     const [routeStats,setRouteStats]= useState<RouteStats | null>(null);
     const [loading,   setLoading]   = useState<{ route: boolean; save: boolean }>({ route: false, save: false });
-    const [routeSaved, setRouteSaved] = useState<boolean>(false);
+    const [routeSaved,   setRouteSaved]   = useState<boolean>(false);
+    const [savedRouteId, setSavedRouteId] = useState<number | null>(null);
     const [toasts,    setToasts]    = useState<ToastMsg[]>([]);
     const [mapReady,  setMapReady]  = useState(false);
 
@@ -551,12 +561,12 @@ export default function RoutePage() {
         setLoading(prev => ({ ...prev, save: true }));
 
         try {
-            await axiosInstance.post(
-                `${API_BASE_URL}/route/create/`,
+            const response = await axiosInstance.post(
+                "/route/create/",
                 {
                     current_location: {
                         type: "Point",
-                        coordinates: [current.lng, current.lat],   // GeoJSON: [lng, lat]
+                        coordinates: [current.lng, current.lat],
                     },
                     pickup_location: {
                         type: "Point",
@@ -566,9 +576,11 @@ export default function RoutePage() {
                         type: "Point",
                         coordinates: [dropoff.lng, dropoff.lat],
                     },
-                },
-                { headers: { Authorization: `Bearer ${token}` } }
+                }
+                // No manual Authorization header — request interceptor adds it automatically
             );
+            const routeId = response.data?.id ?? response.data?.data?.id ?? null;
+            setSavedRouteId(routeId);
             addToast("success", "Route saved successfully!");
             setRouteSaved(true);
         } catch {
@@ -603,6 +615,7 @@ export default function RoutePage() {
         setRouteStats(null);
         setPinMode(null);
         setRouteSaved(false);
+        setSavedRouteId(null);
     }, []);
 
     const allSet = locs.current && locs.pickup && locs.dropoff;
@@ -854,7 +867,7 @@ export default function RoutePage() {
                             {/* Create Driver Log — shown after route is saved */}
                             {routeSaved && (
                                 <button
-                                    onClick={() => navigate("/driver-log")}
+                                    onClick={() => navigate("/driver-log", { state: { route_id: savedRouteId } })}
                                     className="w-full rounded-xl py-3 text-sm font-semibold flex items-center justify-center gap-2 rm-fade-in"
                                     style={{
                                         background: "linear-gradient(135deg,#fbbf24,#f59e0b)",
