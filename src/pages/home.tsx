@@ -247,7 +247,7 @@ export default function HomePage() {
 
                         <div className="animate-slide-up delay-300 flex flex-col sm:flex-row gap-4 justify-center items-center">
                             <a
-                                href="#"
+                                href="/start-trial"
                                 className="btn-glow w-full sm:w-auto font-semibold bg-gradient-to-r from-cyan-500 to-teal-500 text-[#040f16] px-8 py-4 rounded-xl text-base"
                             >
                                 Start Free Trial

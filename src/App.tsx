@@ -10,6 +10,7 @@ import ForgotPasswordPage from "./pages/forgot_password.tsx";
 import RoutePage from "./pages/routecreate.tsx";
 import DriverLogPage from "./pages/driverlog.tsx";
 import Dashboard from "./pages/dashboard.tsx";
+import StartTrial from "./pages/trial.tsx";
 
 
 // Routes where Navbar and Footer should NOT appear
@@ -33,6 +34,7 @@ function Layout() {
                 <Route path="/route"                    element={<RoutePage />} />
                 <Route path="/driver-log"               element={<DriverLogPage />} />
                 <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/start-trial"              element={<StartTrial />} />
 
                 <Route path="*"        element={<NotFound />}/>
             </Routes>
