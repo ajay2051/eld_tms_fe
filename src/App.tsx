@@ -11,6 +11,7 @@ import RoutePage from "./pages/routecreate.tsx";
 import DriverLogPage from "./pages/driverlog.tsx";
 import Dashboard from "./pages/dashboard.tsx";
 import StartTrial from "./pages/trial.tsx";
+import FleetTrackingPage from "./pages/fleet_tracking.tsx";
 
 
 // Routes where Navbar and Footer should NOT appear
@@ -35,6 +36,7 @@ function Layout() {
                 <Route path="/driver-log"               element={<DriverLogPage />} />
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/start-trial"              element={<StartTrial />} />
+                <Route path="/fleet-tracking"              element={<FleetTrackingPage />} />
 
                 <Route path="*"        element={<NotFound />}/>
             </Routes>

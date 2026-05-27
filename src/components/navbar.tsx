@@ -2,23 +2,56 @@ import { useState, useEffect, useRef } from "react";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
+interface NavSubItem {
+    label: string;
+    href: string;
+}
+
 interface NavLink {
     label: string;
-    sub: string[];
+    sub: NavSubItem[];
 }
 
 interface NavDropdownProps {
     label: string;
-    sub: string[];
+    sub: NavSubItem[];
 }
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
 const NAV_LINKS: NavLink[] = [
-    { label: "Products",  sub: ["Fleet Tracking", "ELD Compliance", "Load Management"] },
-    { label: "Solutions", sub: ["Owner Operators", "Fleets", "Brokers"] },
-    { label: "Resources", sub: ["Documentation", "Blog", "Support"] },
-    { label: "Company",   sub: ["About", "Careers", "Contact"] },
+    {
+        label: "Products",
+        sub: [
+            { label: "Fleet Tracking",  href: "/fleet-tracking"  },
+            { label: "ELD Compliance",  href: "/eld-compliance"  },
+            { label: "Load Management", href: "/load-management" },
+        ],
+    },
+    {
+        label: "Solutions",
+        sub: [
+            { label: "Owner Operators", href: "/solutions/owner-operators" },
+            { label: "Fleets",          href: "/solutions/fleets"          },
+            { label: "Brokers",         href: "/solutions/brokers"         },
+        ],
+    },
+    {
+        label: "Resources",
+        sub: [
+            { label: "Documentation",   href: "/docs"    },
+            { label: "Blog",            href: "/blog"    },
+            { label: "Support",         href: "/support" },
+        ],
+    },
+    {
+        label: "Company",
+        sub: [
+            { label: "About",           href: "/about"    },
+            { label: "Careers",         href: "/careers"  },
+            { label: "Contact",         href: "/contact"  },
+        ],
+    },
 ];
 
 // ─── NavDropdown ──────────────────────────────────────────────────────────────
@@ -62,11 +95,11 @@ function NavDropdown({ label, sub }: NavDropdownProps) {
                 <div className="absolute top-full left-0 mt-1 w-44 rounded-xl border border-cyan-500/20 bg-[#061d2a]/95 backdrop-blur-xl shadow-2xl shadow-black/50 py-1.5 z-50">
                     {sub.map((item) => (
                         <a
-                            key={item}
-                            href="#"
+                            key={item.label}
+                            href={item.href}
                             className="block px-4 py-2 text-sm text-slate-300 hover:text-cyan-300 hover:bg-cyan-500/10 transition-colors duration-150"
                         >
-                            {item}
+                            {item.label}
                         </a>
                     ))}
                 </div>
@@ -92,9 +125,9 @@ function Logo() {
                 <div className="absolute inset-0 rounded-lg bg-cyan-400/20 blur-sm group-hover:bg-cyan-400/40 transition-colors" />
             </div>
             <span className="font-display font-700 text-lg tracking-tight">
-        <span className="text-white">fleet</span>
-        <span className="text-cyan-400">pulse</span>
-      </span>
+                <span className="text-white">fleet</span>
+                <span className="text-cyan-400">pulse</span>
+            </span>
         </a>
     );
 }
@@ -136,7 +169,7 @@ export default function Navbar() {
                         Log In
                     </a>
                     <a
-                        href="#"
+                        href="/get-started"
                         className="btn-glow text-sm font-semibold bg-gradient-to-r from-cyan-500 to-teal-500 text-[#040f16] px-5 py-2.5 rounded-lg"
                     >
                         Get Started
@@ -167,24 +200,24 @@ export default function Navbar() {
                             <div className="text-sm font-semibold text-slate-200 py-2">{link.label}</div>
                             {link.sub.map((item) => (
                                 <a
-                                    key={item}
-                                    href="#"
+                                    key={item.label}
+                                    href={item.href}
                                     className="block pl-4 py-1.5 text-sm text-slate-400 hover:text-cyan-300 transition-colors"
                                 >
-                                    {item}
+                                    {item.label}
                                 </a>
                             ))}
                         </div>
                     ))}
                     <div className="pt-4 flex flex-col gap-2">
                         <a
-                            href="#"
+                            href="/login"
                             className="text-center text-sm text-slate-300 border border-slate-600 rounded-lg py-2.5 hover:border-cyan-500/50 hover:text-cyan-300 transition-colors"
                         >
                             Log In
                         </a>
                         <a
-                            href="#"
+                            href="/get-started"
                             className="text-center text-sm font-semibold bg-gradient-to-r from-cyan-500 to-teal-500 text-[#040f16] rounded-lg py-2.5"
                         >
                             Get Started
