@@ -12,10 +12,12 @@ import DriverLogPage from "./pages/driverlog.tsx";
 import Dashboard from "./pages/dashboard.tsx";
 import StartTrial from "./pages/trial.tsx";
 import FleetTrackingPage from "./pages/fleet_tracking.tsx";
+import ELDCompliancePage from "./pages/eld_compliance.tsx";
 
 
 // Routes where Navbar and Footer should NOT appear
-const BARE_ROUTES = ["/login", "/register", "/forgot-password", "/forgot-password-confirm", "/route", "/driver-log", "/dashboard"];
+const BARE_ROUTES = ["/login", "/register", "/forgot-password",
+    "/forgot-password-confirm", "/route", "/driver-log", "/dashboard", "/eld-compliance"];
 
 function Layout() {
     const { pathname } = useLocation();
@@ -37,6 +39,7 @@ function Layout() {
                 <Route path="/dashboard" element={<Dashboard />} />
                 <Route path="/start-trial"              element={<StartTrial />} />
                 <Route path="/fleet-tracking"              element={<FleetTrackingPage />} />
+                <Route path="/eld-compliance"              element={<ELDCompliancePage />} />
 
                 <Route path="*"        element={<NotFound />}/>
             </Routes>
