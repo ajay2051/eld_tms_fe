@@ -14,6 +14,7 @@ import StartTrial from "./pages/trial.tsx";
 import FleetTrackingPage from "./pages/fleet_tracking.tsx";
 import ELDCompliancePage from "./pages/eld_compliance.tsx";
 import LoadManagementPage from "./pages/load_management.tsx";
+import OwnerOperatorsPage from "./pages/owner_operators.tsx";
 
 
 // Routes where Navbar and Footer should NOT appear
@@ -42,6 +43,7 @@ function Layout() {
                 <Route path="/fleet-tracking"              element={<FleetTrackingPage />} />
                 <Route path="/eld-compliance"              element={<ELDCompliancePage />} />
                 <Route path="/load-management"              element={<LoadManagementPage />} />
+                <Route path="/owner-operators" element={<OwnerOperatorsPage />} />
 
                 <Route path="*"        element={<NotFound />}/>
             </Routes>

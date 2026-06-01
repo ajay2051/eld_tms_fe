@@ -31,9 +31,9 @@ const NAV_LINKS: NavLink[] = [
     {
         label: "Solutions",
         sub: [
-            { label: "Owner Operators", href: "/solutions/owner-operators" },
-            { label: "Fleets",          href: "/solutions/fleets"          },
-            { label: "Brokers",         href: "/solutions/brokers"         },
+            { label: "Owner Operators", href: "/owner-operators" },
+            { label: "Fleets",          href: "/fleets"          },
+            { label: "Brokers",         href: "/brokers"         },
         ],
     },
     {
