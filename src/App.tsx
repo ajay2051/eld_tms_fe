@@ -18,6 +18,7 @@ import OwnerOperatorsPage from "./pages/owner_operators.tsx";
 import FleetsPage from "./pages/fleets.tsx";
 import BrokersPage from "./pages/brokers.tsx";
 import DocumentationPage from "./pages/docs.tsx";
+import BlogPage from "./pages/blog.tsx";
 
 
 // Routes where Navbar and Footer should NOT appear
@@ -50,6 +51,7 @@ function Layout() {
                 <Route path="/fleets" element={<FleetsPage />} />
                 <Route path="/brokers" element={<BrokersPage />} />
                 <Route path="/docs" element={<DocumentationPage />} />
+                <Route path="/blog" element={<BlogPage />} />
 
                 <Route path="*"        element={<NotFound />}/>
             </Routes>
