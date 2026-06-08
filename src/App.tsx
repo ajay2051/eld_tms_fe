@@ -21,6 +21,7 @@ import DocumentationPage from "./pages/docs.tsx";
 import BlogPage from "./pages/blog.tsx";
 import SupportPage from "./pages/support.tsx";
 import AboutPage from "./pages/about.tsx";
+import CareersPage from "./pages/careers.tsx";
 
 
 // Routes where Navbar and Footer should NOT appear
@@ -56,6 +57,7 @@ function Layout() {
                 <Route path="/blog" element={<BlogPage />} />
                 <Route path="/support" element={<SupportPage />} />
                 <Route path="/about" element={<AboutPage />} />
+                <Route path="/careers" element={<CareersPage />} />
 
                 <Route path="*"        element={<NotFound />}/>
             </Routes>
