@@ -24,6 +24,7 @@ import AboutPage from "./pages/about.tsx";
 import CareersPage from "./pages/careers.tsx";
 import ContactPage from "./pages/contact.tsx";
 import PrivacyPolicyPage from "./pages/privacy.tsx";
+import TermsOfServicePage from "./pages/terms.tsx";
 
 
 // Routes where Navbar and Footer should NOT appear
@@ -62,6 +63,7 @@ function Layout() {
                 <Route path="/careers" element={<CareersPage />} />
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/privacy" element={<PrivacyPolicyPage />} />
+                <Route path="/terms" element={<TermsOfServicePage />} />
 
                 <Route path="*"        element={<NotFound />}/>
             </Routes>

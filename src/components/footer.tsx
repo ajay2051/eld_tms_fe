@@ -59,7 +59,7 @@ const SOCIAL_LINKS: FooterLink[] = [
 
 const LEGAL_LINKS: FooterLink[] = [
     { label: "Privacy Policy", href: "/privacy" },
-    { label: "Terms of Service", href: "#" },
+    { label: "Terms of Service", href: "/terms" },
     { label: "Cookie Policy", href: "#" },
 ];
 
