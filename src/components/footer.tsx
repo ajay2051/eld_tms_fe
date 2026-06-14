@@ -16,28 +16,28 @@ const FOOTER_COLUMNS: FooterColumn[] = [
     {
         heading: "Products",
         links: [
-            { label: "Fleet Tracking",    href: "#" },
-            { label: "ELD Compliance",    href: "#" },
-            { label: "Load Management",   href: "#" },
+            { label: "Fleet Tracking",    href: "/fleet-tracking" },
+            { label: "ELD Compliance",    href: "/eld-compliance" },
+            { label: "Load Management",   href: "/load-management" },
             { label: "Driver App",        href: "#" },
         ],
     },
     {
         heading: "Solutions",
         links: [
-            { label: "Owner Operators",   href: "#" },
-            { label: "Small Fleets",      href: "#" },
+            { label: "Owner Operators",   href: "/owner-operators" },
+            { label: "Small Fleets",      href: "/fleets" },
             { label: "Enterprise",        href: "#" },
-            { label: "Brokers",           href: "#" },
+            { label: "Brokers",           href: "/brokers" },
         ],
     },
     {
         heading: "Resources",
         links: [
-            { label: "Documentation",     href: "#" },
+            { label: "Documentation",     href: "/docs" },
             { label: "API Reference",     href: "#" },
             { label: "Blog",              href: "/blog" },
-            { label: "Support Center",    href: "#" },
+            { label: "Support Center",    href: "/support" },
         ],
     },
     {
