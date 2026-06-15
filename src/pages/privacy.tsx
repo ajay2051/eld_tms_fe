@@ -346,7 +346,7 @@ const POLICY_SECTIONS: PolicySection[] = [
                     ))}
                 </div>
                 <p>To exercise any of these rights, email <span className="text-cyan-300">privacy@fleetpulse.com</span> or use the data request form in your Account Settings. We may need to verify your identity before processing the request.</p>
-                <p>If you're located in California, you have additional rights under CCPA/CPRA. If you're in the EU or UK, you have rights under GDPR/UK GDPR, including the right to lodge a complaint with your local supervisory authority.</p>
+                <p>If you are located in California, you have additional rights under CCPA/CPRA. If you're in the EU or UK, you have rights under GDPR/UK GDPR, including the right to lodge a complaint with your local supervisory authority.</p>
             </div>
         ),
     },
