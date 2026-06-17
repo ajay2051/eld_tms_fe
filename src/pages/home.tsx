@@ -253,7 +253,9 @@ export default function HomePage() {
                                 Start Free Trial
                             </a>
                             <a
-                                href="#"
+                                href="https://www.youtube.com/watch?v=whxe41XYXS8&t=24s"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="w-full sm:w-auto flex items-center justify-center gap-2 glass rounded-xl px-8 py-4 text-base text-slate-300 hover:text-cyan-300 hover:border-cyan-500/40 transition-all"
                             >
                                 <svg viewBox="0 0 20 20" fill="none" className="w-5 h-5">
