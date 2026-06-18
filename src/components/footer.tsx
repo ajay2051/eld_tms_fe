@@ -60,7 +60,7 @@ const SOCIAL_LINKS: FooterLink[] = [
 const LEGAL_LINKS: FooterLink[] = [
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms of Service", href: "/terms" },
-    { label: "Cookie Policy", href: "#" },
+    { label: "Cookie Policy", href: "/cookie" },
 ];
 
 // ─── Logo (local copy to keep Footer self-contained) ─────────────────────────
