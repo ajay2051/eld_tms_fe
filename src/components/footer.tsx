@@ -68,7 +68,7 @@ const LEGAL_LINKS: FooterLink[] = [
 function FooterLogo() {
     return (
         <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-md bg-gradient-to-br from-cyan-400 to-teal-600 flex items-center justify-center shadow-md shadow-cyan-500/25">
+            <div className="w-7 h-7 rounded-md bg-linear-to-br from-cyan-400 to-teal-600 flex items-center justify-center shadow-md shadow-cyan-500/25">
                 <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4">
                     <path d="M2 8h15l3 5v3H2V8z" stroke="white" strokeWidth="1.5" strokeLinejoin="round" />
                     <circle cx="6.5"  cy="16" r="2" fill="white" />
@@ -92,7 +92,7 @@ export default function Footer() {
     return (
         <footer className="relative border-t border-slate-800/60">
             {/* Subtle top glow */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent" />
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-px bg-linear-to-r from-transparent via-cyan-500/30 to-transparent" />
 
             {/* Main footer grid */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-16 pb-10">
