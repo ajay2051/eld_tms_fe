@@ -114,7 +114,7 @@ function Logo() {
     return (
         <a href="/" className="flex items-center gap-2.5 group">
             <div className="relative">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-400 to-teal-600 flex items-center justify-center shadow-lg shadow-cyan-500/30">
+                <div className="w-8 h-8 rounded-lg bg-linear-to-br from-cyan-400 to-teal-600 flex items-center justify-center shadow-lg shadow-cyan-500/30">
                     <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5">
                         <path d="M2 8h15l3 5v3H2V8z" stroke="white" strokeWidth="1.5" strokeLinejoin="round" />
                         <circle cx="6.5"  cy="16" r="2" fill="white" />
@@ -170,7 +170,7 @@ export default function Navbar() {
                     </a>
                     <a
                         href="/get-started"
-                        className="btn-glow text-sm font-semibold bg-gradient-to-r from-cyan-500 to-teal-500 text-[#040f16] px-5 py-2.5 rounded-lg"
+                        className="btn-glow text-sm font-semibold bg-linear-to-r from-cyan-500 to-teal-500 text-[#040f16] px-5 py-2.5 rounded-lg"
                     >
                         Get Started
                     </a>
@@ -218,7 +218,7 @@ export default function Navbar() {
                         </a>
                         <a
                             href="/get-started"
-                            className="text-center text-sm font-semibold bg-gradient-to-r from-cyan-500 to-teal-500 text-[#040f16] rounded-lg py-2.5"
+                            className="text-center text-sm font-semibold bg-linear-to-r from-cyan-500 to-teal-500 text-[#040f16] rounded-lg py-2.5"
                         >
                             Get Started
                         </a>

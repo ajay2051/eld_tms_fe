@@ -26,6 +26,7 @@ import ContactPage from "./pages/contact.tsx";
 import PrivacyPolicyPage from "./pages/privacy.tsx";
 import TermsOfServicePage from "./pages/terms.tsx";
 import CookiePolicyPage from "./pages/cookie.tsx";
+import GetStartedPage from "./pages/started.tsx";
 
 
 // Routes where Navbar and Footer should NOT appear
@@ -66,6 +67,7 @@ function Layout() {
                 <Route path="/privacy" element={<PrivacyPolicyPage />} />
                 <Route path="/terms" element={<TermsOfServicePage />} />
                 <Route path="/cookie" element={<CookiePolicyPage />} />
+                <Route path="/get-started" element={<GetStartedPage />} />
 
                 <Route path="*"        element={<NotFound />}/>
             </Routes>
