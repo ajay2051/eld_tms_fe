@@ -240,7 +240,7 @@ function FaqAccordion({ faqs }: { faqs: Faq[] }) {
                         <svg
                             viewBox="0 0 12 12"
                             fill="none"
-                            className={`w-3.5 h-3.5 flex-shrink-0 text-slate-500 transition-transform duration-200 ${open === i ? "rotate-180 text-cyan-400" : ""}`}
+                            className={`w-3.5 h-3.5 shrink-0 text-slate-500 transition-transform duration-200 ${open === i ? "rotate-180 text-cyan-400" : ""}`}
                         >
                             <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                         </svg>
@@ -289,7 +289,7 @@ function SignupForm({ selectedPlan }: { selectedPlan: string }) {
                 <div className="flex flex-col sm:flex-row gap-3 justify-center">
                     <a
                         href="/dashboard"
-                        className="btn-glow text-sm font-semibold bg-gradient-to-r from-cyan-500 to-teal-500 text-[#040f16] px-7 py-3 rounded-xl"
+                        className="btn-glow text-sm font-semibold bg-linear-to-r from-cyan-500 to-teal-500 text-[#040f16] px-7 py-3 rounded-xl"
                     >
                         Go to Dashboard
                     </a>
@@ -408,7 +408,7 @@ function SignupForm({ selectedPlan }: { selectedPlan: string }) {
                     onClick={() => {
                         if (form.firstName && form.email) setSubmitted(true);
                     }}
-                    className="w-full btn-glow py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-[#040f16] text-sm font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
+                    className="w-full btn-glow py-3.5 rounded-xl bg-linear-to-r from-cyan-500 to-teal-500 text-[#040f16] text-sm font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
                 >
                     Start Free Trial
                     <svg viewBox="0 0 16 16" fill="none" className="w-4 h-4">
@@ -521,7 +521,7 @@ export default function GetStartedPage() {
                                             : "border-slate-700/30 hover:border-slate-600/50"
                                     }`}
                                 >
-                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-cyan-500/5 to-transparent rounded-2xl" />
+                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-linear-to-br from-cyan-500/5 to-transparent rounded-2xl" />
                                     <div className="relative">
                                         <div className="p-2.5 glass rounded-xl inline-block mb-4">{role.icon}</div>
                                         <div className="font-display text-base font-700 text-white mb-1">{role.title}</div>
@@ -668,7 +668,7 @@ export default function GetStartedPage() {
                                             { icon: "🔄", text: "Cancel or switch plans anytime" },
                                         ].map((item, i) => (
                                             <li key={i} className="flex items-start gap-2.5 text-sm text-slate-400">
-                                                <span className="text-base flex-shrink-0">{item.icon}</span>
+                                                <span className="text-base shrink-0">{item.icon}</span>
                                                 {item.text}
                                             </li>
                                         ))}
@@ -703,7 +703,7 @@ export default function GetStartedPage() {
                                                 </div>
                                                 <p className="text-xs text-slate-300 leading-relaxed mb-3">"{t.quote}"</p>
                                                 <div className="flex items-center gap-2">
-                                                    <div className={`w-7 h-7 rounded-full bg-gradient-to-br ${t.accent} border flex items-center justify-center text-[10px] font-bold flex-shrink-0`}>
+                                                    <div className={`w-7 h-7 rounded-full bg-linear-to-br ${t.accent} border flex items-center justify-center text-[10px] font-bold shrink-0`}>
                                                         {t.initials}
                                                     </div>
                                                     <div>
@@ -756,7 +756,7 @@ export default function GetStartedPage() {
                                 </p>
                             </div>
                             <div className="relative grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                                <div className="hidden lg:block absolute top-8 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-cyan-500/20 via-violet-500/20 to-emerald-500/20" />
+                                <div className="hidden lg:block absolute top-8 left-[12.5%] right-[12.5%] h-px bg-linear-to-r from-cyan-500/20 via-violet-500/20 to-emerald-500/20" />
                                 {STEPS.map((step, i) => (
                                     <div key={i} className="relative">
                                         <div className={`w-14 h-14 rounded-2xl ${step.bg} border ${step.border} flex items-center justify-center mb-5`}>
@@ -813,7 +813,7 @@ export default function GetStartedPage() {
                             <a
                                 href="#"
                                 onClick={e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}
-                                className="btn-glow font-semibold bg-gradient-to-r from-cyan-500 to-teal-500 text-[#040f16] px-10 py-4 rounded-xl text-base"
+                                className="btn-glow font-semibold bg-linear-to-r from-cyan-500 to-teal-500 text-[#040f16] px-10 py-4 rounded-xl text-base"
                             >
                                 Start Free Trial
                             </a>
