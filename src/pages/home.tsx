@@ -186,7 +186,7 @@ function HOSWidget() {
                     </div>
                     <div className="h-2 rounded-full bg-slate-700/60 overflow-hidden">
                         <div
-                            className={`h-full rounded-full bg-gradient-to-r ${bar.gradient}`}
+                            className={`h-full rounded-full bg-linear-to-r ${bar.gradient}`}
                             style={{ width: `${(bar.used / bar.max) * 100}%` }}
                         />
                     </div>
@@ -248,7 +248,7 @@ export default function HomePage() {
                         <div className="animate-slide-up delay-300 flex flex-col sm:flex-row gap-4 justify-center items-center">
                             <a
                                 href="/start-trial"
-                                className="btn-glow w-full sm:w-auto font-semibold bg-gradient-to-r from-cyan-500 to-teal-500 text-[#040f16] px-8 py-4 rounded-xl text-base"
+                                className="btn-glow w-full sm:w-auto font-semibold bg-linear-to-r from-cyan-500 to-teal-500 text-[#040f16] px-8 py-4 rounded-xl text-base"
                             >
                                 Start Free Trial
                             </a>
@@ -320,7 +320,7 @@ export default function HomePage() {
                                     key={i}
                                     className="glass rounded-2xl p-6 card-glow group relative overflow-hidden"
                                 >
-                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-cyan-500/5 to-transparent rounded-2xl" />
+                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-linear-to-br from-cyan-500/5 to-transparent rounded-2xl" />
 
                                     <div className="flex items-start justify-between mb-4">
                                         <div className="p-2.5 glass rounded-xl">{f.icon}</div>
@@ -413,7 +413,7 @@ export default function HomePage() {
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <a
                                 href="#"
-                                className="btn-glow font-semibold bg-gradient-to-r from-cyan-500 to-teal-500 text-[#040f16] px-10 py-4 rounded-xl text-base"
+                                className="btn-glow font-semibold bg-linear-to-r from-cyan-500 to-teal-500 text-[#040f16] px-10 py-4 rounded-xl text-base"
                             >
                                 Start 14-Day Free Trial
                             </a>
