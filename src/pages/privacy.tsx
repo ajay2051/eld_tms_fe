@@ -592,7 +592,7 @@ export default function PrivacyPolicyPage() {
                                                 : "text-slate-500 hover:text-slate-300 hover:bg-slate-800/30"
                                         }`}
                                     >
-                                        <div className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${
+                                        <div className={`w-1.5 h-1.5 rounded-full shrink-0 ${
                                             activeSection === section.id ? section.dotColor : "bg-slate-700"
                                         }`} />
                                         {section.title}
@@ -676,10 +676,10 @@ export default function PrivacyPolicyPage() {
                                         <div className="text-sm font-semibold text-white mb-0.5">Questions about this policy?</div>
                                         <div className="text-xs text-slate-400">We're happy to explain anything in plain language.</div>
                                     </div>
-                                    <div className="flex gap-3 flex-shrink-0">
+                                    <div className="flex gap-3 shrink-0">
                                         <a
                                             href="mailto:privacy@fleetpulse.com"
-                                            className="btn-glow text-sm font-semibold bg-gradient-to-r from-cyan-500 to-teal-500 text-[#040f16] px-5 py-2.5 rounded-lg whitespace-nowrap"
+                                            className="btn-glow text-sm font-semibold bg-linear-to-r from-cyan-500 to-teal-500 text-[#040f16] px-5 py-2.5 rounded-lg whitespace-nowrap"
                                         >
                                             Email Privacy Team
                                         </a>
