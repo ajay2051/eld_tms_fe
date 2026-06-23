@@ -477,7 +477,7 @@ const POLICY_SECTIONS: PolicySection[] = [
                             ["Mailing address",   "FleetPulse, Inc.\n1801 E 6th Street, Suite 410\nAustin, TX 78702"],
                         ].map(([label, value], i) => (
                             <div key={i} className="flex gap-4">
-                                <span className="text-slate-500 w-32 flex-shrink-0">{label}</span>
+                                <span className="text-slate-500 w-32 shrink-0">{label}</span>
                                 <span className="text-slate-300 whitespace-pre-line">{value}</span>
                             </div>
                         ))}
@@ -577,7 +577,7 @@ export default function PrivacyPolicyPage() {
                     <div className="max-w-7xl mx-auto flex gap-10">
 
                         {/* ── Sidebar TOC ────────────────────────────────── */}
-                        <aside className="hidden lg:block w-56 flex-shrink-0">
+                        <aside className="hidden lg:block w-56 shrink-0">
                             <div className="sticky top-24 space-y-1">
                                 <div className="text-[10px] font-bold text-slate-600 uppercase tracking-widest px-3 mb-3">
                                     Contents
