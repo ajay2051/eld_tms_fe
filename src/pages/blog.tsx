@@ -196,7 +196,7 @@ const POPULAR_TAGS = ["ELD", "HOS", "FMCSA", "AI", "IFTA", "Owner Operators", "F
 function AuthorAvatar({ author, size = "sm" }: { author: Author; size?: "sm" | "md" }) {
     const dim = size === "md" ? "w-10 h-10 text-sm" : "w-7 h-7 text-xs";
     return (
-        <div className={`${dim} rounded-full bg-gradient-to-br ${author.accent} border flex items-center justify-center font-bold flex-shrink-0`}>
+        <div className={`${dim} rounded-full bg-linear-to-br ${author.accent} border flex items-center justify-center font-bold flex-shrink-0`}>
             {author.initials}
         </div>
     );
@@ -251,7 +251,7 @@ function FeaturedCard({ post }: { post: BlogPost }) {
                         <div className="text-xs font-semibold text-slate-300 truncate">{post.author.name}</div>
                         <div className="text-[10px] text-slate-500">{post.date}</div>
                     </div>
-                    <svg viewBox="0 0 16 16" fill="none" className="w-4 h-4 text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0">
+                    <svg viewBox="0 0 16 16" fill="none" className="w-4 h-4 text-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity shrink-0">
                         <path d="M3 8h10M9 5l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                 </div>
@@ -467,7 +467,7 @@ export default function BlogPage() {
                         </div>
 
                         {/* ── Sidebar ────────────────────────────────────── */}
-                        <aside className="hidden lg:flex flex-col gap-6 w-64 flex-shrink-0">
+                        <aside className="hidden lg:flex flex-col gap-6 w-64 shrink-0">
 
                             {/* Popular tags */}
                             <div className="glass rounded-xl p-5 border border-slate-700/30">
@@ -536,7 +536,7 @@ export default function BlogPage() {
                                         placeholder="your@email.com"
                                         className="w-full px-3 py-2 rounded-lg glass border border-slate-700/50 text-xs text-slate-200 placeholder-slate-600 focus:outline-none focus:border-cyan-500/50 bg-transparent mb-2 transition-colors"
                                     />
-                                    <button className="w-full py-2 rounded-lg bg-gradient-to-r from-cyan-500 to-teal-500 text-[#040f16] text-xs font-bold btn-glow">
+                                    <button className="w-full py-2 rounded-lg bg-linear-to-r from-cyan-500 to-teal-500 text-[#040f16] text-xs font-bold btn-glow">
                                         Subscribe
                                     </button>
                                     <p className="text-[10px] text-slate-600 mt-2 text-center">No spam. Unsubscribe anytime.</p>
@@ -551,7 +551,7 @@ export default function BlogPage() {
                                 <div className="space-y-3">
                                     {Object.values(AUTHORS).map(author => (
                                         <div key={author.name} className="flex items-center gap-3">
-                                            <div className={`w-8 h-8 rounded-full bg-gradient-to-br ${author.accent} border flex items-center justify-center text-xs font-bold flex-shrink-0`}>
+                                            <div className={`w-8 h-8 rounded-full bg-linear-to-br ${author.accent} border flex items-center justify-center text-xs font-bold flex-shrink-0`}>
                                                 {author.initials}
                                             </div>
                                             <div>
@@ -585,7 +585,7 @@ export default function BlogPage() {
                                 placeholder="Enter your email"
                                 className="flex-1 px-4 py-3 rounded-xl glass border border-slate-700/50 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-cyan-500/50 bg-transparent transition-colors"
                             />
-                            <button className="btn-glow font-semibold bg-gradient-to-r from-cyan-500 to-teal-500 text-[#040f16] px-6 py-3 rounded-xl text-sm whitespace-nowrap">
+                            <button className="btn-glow font-semibold bg-linear-to-r from-cyan-500 to-teal-500 text-[#040f16] px-6 py-3 rounded-xl text-sm whitespace-nowrap">
                                 Subscribe Free
                             </button>
                         </div>
