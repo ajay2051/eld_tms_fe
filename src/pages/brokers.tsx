@@ -425,7 +425,7 @@ function CarrierMatchWidget() {
                             <span className={`text-xs font-bold ${c.color}`}>{c.score}</span>
                         </div>
                         <div className="h-1 rounded-full bg-slate-700/60 overflow-hidden mb-2">
-                            <div className={`h-full rounded-full bg-gradient-to-r ${c.bar}`} style={{ width: `${c.score}%` }} />
+                            <div className={`h-full rounded-full bg-linear-to-r ${c.bar}`} style={{ width: `${c.score}%` }} />
                         </div>
                         <div className="flex items-center justify-between">
                             <span className="text-[10px] text-slate-500">{c.lanes}</span>
@@ -435,7 +435,7 @@ function CarrierMatchWidget() {
                 ))}
             </div>
 
-            <button className="mt-4 w-full py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-[#040f16] text-xs font-bold transition-opacity hover:opacity-90">
+            <button className="mt-4 w-full py-2.5 rounded-xl bg-linear-to-r from-cyan-500 to-teal-500 text-[#040f16] text-xs font-bold transition-opacity hover:opacity-90">
                 Send Rate Con to #{selected + 1}
             </button>
         </div>
@@ -488,7 +488,7 @@ export default function BrokersPage() {
                                 <div className="flex flex-col sm:flex-row gap-4">
                                     <a
                                         href="/start-trial"
-                                        className="btn-glow w-full sm:w-auto text-center font-semibold bg-gradient-to-r from-cyan-500 to-teal-500 text-[#040f16] px-8 py-4 rounded-xl text-base"
+                                        className="btn-glow w-full sm:w-auto text-center font-semibold bg-linear-to-r from-cyan-500 to-teal-500 text-[#040f16] px-8 py-4 rounded-xl text-base"
                                     >
                                         Start Free Trial
                                     </a>
@@ -779,7 +779,7 @@ export default function BrokersPage() {
                                     <StarRating count={t.rating} />
                                     <p className="text-slate-300 text-sm leading-relaxed mt-4 flex-1">"{t.quote}"</p>
                                     <div className="flex items-center gap-3 mt-6 pt-5 border-t border-slate-700/40">
-                                        <div className="w-9 h-9 rounded-full bg-gradient-to-br from-cyan-500/30 to-teal-600/30 border border-cyan-500/30 flex items-center justify-center text-xs font-bold text-cyan-300">
+                                        <div className="w-9 h-9 rounded-full bg-linear-to-br from-cyan-500/30 to-teal-600/30 border border-cyan-500/30 flex items-center justify-center text-xs font-bold text-cyan-300">
                                             {t.initials}
                                         </div>
                                         <div>
@@ -817,14 +817,14 @@ export default function BrokersPage() {
                                     key={i}
                                     className={`rounded-3xl overflow-hidden relative ${
                                         tier.highlight
-                                            ? "border border-cyan-500/40 bg-gradient-to-b from-cyan-500/10 to-transparent"
+                                            ? "border border-cyan-500/40 bg-linear-to-b from-cyan-500/10 to-transparent"
                                             : "glass border border-slate-700/40"
                                     }`}
                                     style={tier.highlight ? { boxShadow: "0 0 60px rgba(0,229,204,0.1)" } : undefined}
                                 >
                                     {tier.badge && (
                                         <div className="absolute top-0 left-0 right-0 flex justify-center">
-                                            <div className="bg-gradient-to-r from-cyan-500 to-teal-500 text-[#040f16] text-[10px] font-bold tracking-widest px-4 py-1 rounded-b-lg">
+                                            <div className="bg-linear-to-r from-cyan-500 to-teal-500 text-[#040f16] text-[10px] font-bold tracking-widest px-4 py-1 rounded-b-lg">
                                                 {tier.badge}
                                             </div>
                                         </div>
