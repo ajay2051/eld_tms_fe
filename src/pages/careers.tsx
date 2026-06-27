@@ -411,7 +411,7 @@ function JobCard({ job, onApply }: { job: JobListing; onApply: (job: JobListing)
                     </div>
                     <button
                         onClick={(e) => { e.stopPropagation(); onApply(job); }}
-                        className="btn-glow text-sm font-semibold bg-gradient-to-r from-cyan-500 to-teal-500 text-[#040f16] px-6 py-2.5 rounded-xl"
+                        className="btn-glow text-sm font-semibold bg-linear-to-r from-cyan-500 to-teal-500 text-[#040f16] px-6 py-2.5 rounded-xl"
                     >
                         Apply for this role
                     </button>
@@ -520,7 +520,7 @@ function ApplyModal({ job, onClose }: { job: JobListing; onClose: () => void }) 
 
                     <button
                         onClick={() => { if (form.name && form.email) setSubmitted(true); }}
-                        className="w-full btn-glow py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-[#040f16] text-sm font-bold"
+                        className="w-full btn-glow py-3 rounded-xl bg-linear-to-r from-cyan-500 to-teal-500 text-[#040f16] text-sm font-bold"
                     >
                         Submit Application
                     </button>
@@ -612,7 +612,7 @@ export default function CareersPage() {
 
                         <div className="grid sm:grid-cols-3 gap-5">
                             {TEAM_PHOTOS.map((photo, i) => (
-                                <div key={i} className={`glass rounded-2xl overflow-hidden border bg-gradient-to-br ${photo.accent} card-glow`}>
+                                <div key={i} className={`glass rounded-2xl overflow-hidden border bg-linear-to-br ${photo.accent} card-glow`}>
                                     <div className="h-36 flex items-center justify-center px-6 py-4">
                                         {photo.icon}
                                     </div>
@@ -841,7 +841,7 @@ export default function CareersPage() {
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <a
                                 href="#open-roles"
-                                className="btn-glow font-semibold bg-gradient-to-r from-cyan-500 to-teal-500 text-[#040f16] px-10 py-4 rounded-xl text-base"
+                                className="btn-glow font-semibold bg-linear-to-r from-cyan-500 to-teal-500 text-[#040f16] px-10 py-4 rounded-xl text-base"
                             >
                                 See Open Roles
                             </a>
