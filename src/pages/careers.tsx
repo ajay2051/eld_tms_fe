@@ -645,7 +645,7 @@ export default function CareersPage() {
                         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
                             {PERKS.map((perk, i) => (
                                 <div key={i} className={`glass rounded-2xl p-6 border card-glow group relative overflow-hidden ${perk.accent}`}>
-                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-cyan-500/5 to-transparent rounded-2xl" />
+                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-linear-to-br from-cyan-500/5 to-transparent rounded-2xl" />
                                     <div className="p-2.5 glass rounded-xl inline-block mb-4">{perk.icon}</div>
                                     <h3 className="font-display text-base font-600 text-white mb-2">{perk.title}</h3>
                                     <p className="text-sm text-slate-400 leading-relaxed">{perk.desc}</p>
@@ -812,7 +812,7 @@ export default function CareersPage() {
                             </div>
 
                             <div className="relative grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                                <div className="hidden lg:block absolute top-8 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-cyan-500/20 via-violet-500/20 to-emerald-500/20" />
+                                <div className="hidden lg:block absolute top-8 left-[12.5%] right-[12.5%] h-px bg-linear-to-r from-cyan-500/20 via-violet-500/20 to-emerald-500/20" />
                                 {PROCESS_STEPS.map((step, i) => (
                                     <div key={i} className="relative">
                                         <div className={`w-14 h-14 rounded-2xl ${step.bg} border ${step.border} flex items-center justify-center mb-5`}>
