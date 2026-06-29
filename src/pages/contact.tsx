@@ -323,7 +323,7 @@ function ContactForm() {
 
                 <button
                     onClick={handleSubmit}
-                    className="w-full btn-glow py-3.5 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-[#040f16] text-sm font-bold transition-opacity hover:opacity-90 flex items-center justify-center gap-2"
+                    className="w-full btn-glow py-3.5 rounded-xl bg-linear-to-r from-cyan-500 to-teal-500 text-[#040f16] text-sm font-bold transition-opacity hover:opacity-90 flex items-center justify-center gap-2"
                 >
                     Send Message
                     <svg viewBox="0 0 16 16" fill="none" className="w-4 h-4">
@@ -379,7 +379,7 @@ export default function ContactPage() {
                                     href={reason.actionHref}
                                     className={`glass rounded-2xl p-6 border card-glow group hover:border-cyan-500/30 transition-all duration-200 text-left relative overflow-hidden ${reason.accent}`}
                                 >
-                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-cyan-500/5 to-transparent rounded-2xl" />
+                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-linear-to-br from-cyan-500/5 to-transparent rounded-2xl" />
                                     <div className="relative">
                                         {reason.badge ? (
                                             <div className="flex justify-end mb-3">
@@ -536,7 +536,7 @@ export default function ContactPage() {
                                                 <span className={`font-semibold ${r.text}`}>{r.time}</span>
                                             </div>
                                             <div className="h-1.5 rounded-full bg-slate-700/60 overflow-hidden">
-                                                <div className={`h-full rounded-full bg-gradient-to-r ${r.color}`} style={{ width: `${r.pct}%` }} />
+                                                <div className={`h-full rounded-full bg-linear-to-r ${r.color}`} style={{ width: `${r.pct}%` }} />
                                             </div>
                                         </div>
                                     ))}
