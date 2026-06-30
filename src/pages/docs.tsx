@@ -627,7 +627,7 @@ export default function DocumentationPage() {
                                         <div className="flex gap-3 flex-shrink-0">
                                             <a
                                                 href="/support"
-                                                className="btn-glow text-sm font-semibold bg-gradient-to-r from-cyan-500 to-teal-500 text-[#040f16] px-5 py-2.5 rounded-lg whitespace-nowrap"
+                                                className="btn-glow text-sm font-semibold bg-linear-to-r from-cyan-500 to-teal-500 text-[#040f16] px-5 py-2.5 rounded-lg whitespace-nowrap"
                                             >
                                                 Contact Support
                                             </a>

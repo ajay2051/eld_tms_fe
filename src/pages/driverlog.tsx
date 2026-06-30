@@ -983,7 +983,7 @@ export default function DriverLogPage() {
                     {/* Logo */}
                     <a href="/" className="flex items-center gap-2 group">
                         <div className="relative">
-                            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-400 to-teal-600 flex items-center justify-center shadow-md shadow-cyan-500/30">
+                            <div className="w-8 h-8 rounded-lg bg-linear-to-br from-cyan-400 to-teal-600 flex items-center justify-center shadow-md shadow-cyan-500/30">
                                 <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5">
                                     <path d="M2 8h15l3 5v3H2V8z" stroke="white" strokeWidth="1.5" strokeLinejoin="round"/>
                                     <circle cx="6.5"  cy="16" r="2" fill="white"/>

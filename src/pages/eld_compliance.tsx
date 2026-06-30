@@ -302,7 +302,7 @@ function Logo(): JSX.Element {
     return (
         <a href="/" className="flex items-center gap-2.5 group">
             <div className="relative">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-400 to-teal-600 flex items-center justify-center shadow-lg shadow-cyan-500/30">
+                <div className="w-8 h-8 rounded-lg bg-linear-to-br from-cyan-400 to-teal-600 flex items-center justify-center shadow-lg shadow-cyan-500/30">
                     <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5">
                         <path d="M2 8h15l3 5v3H2V8z" stroke="white" strokeWidth="1.5" strokeLinejoin="round" />
                         <circle cx="6.5"  cy="16" r="2" fill="white" />
@@ -358,7 +358,7 @@ function Navbar(): JSX.Element {
                     </a>
                     <a
                         href="/get-started"
-                        className="text-sm font-semibold bg-gradient-to-r from-cyan-500 to-teal-500 text-[#040f16] px-5 py-2.5 rounded-lg shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 transition-shadow"
+                        className="text-sm font-semibold bg-linear-to-r from-cyan-500 to-teal-500 text-[#040f16] px-5 py-2.5 rounded-lg shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 transition-shadow"
                     >
                         Get Started
                     </a>
@@ -404,7 +404,7 @@ function Navbar(): JSX.Element {
                         </a>
                         <a
                             href="/get-started"
-                            className="text-center text-sm font-semibold bg-gradient-to-r from-cyan-500 to-teal-500 text-[#040f16] rounded-lg py-2.5"
+                            className="text-center text-sm font-semibold bg-linear-to-r from-cyan-500 to-teal-500 text-[#040f16] rounded-lg py-2.5"
                         >
                             Get Started
                         </a>
@@ -778,7 +778,7 @@ export default function ELDCompliancePage(): JSX.Element {
                                 <div className="animate-slide-up delay-200 flex flex-col sm:flex-row gap-3 mb-10">
                                     <a
                                         href="/start-trial"
-                                        className="btn-glow inline-flex items-center justify-center gap-2 font-semibold bg-gradient-to-r from-cyan-500 to-teal-500 text-[#040f16] px-7 py-3.5 rounded-xl text-sm"
+                                        className="btn-glow inline-flex items-center justify-center gap-2 font-semibold bg-linear-to-r from-cyan-500 to-teal-500 text-[#040f16] px-7 py-3.5 rounded-xl text-sm"
                                     >
                                         Start Free Trial
                                         <svg viewBox="0 0 16 16" fill="none" className="w-4 h-4">
@@ -1000,7 +1000,7 @@ export default function ELDCompliancePage(): JSX.Element {
                                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                                     <a
                                         href="#"
-                                        className="btn-glow font-semibold bg-gradient-to-r from-cyan-500 to-teal-500 text-[#040f16] px-10 py-4 rounded-xl text-sm"
+                                        className="btn-glow font-semibold bg-linear-to-r from-cyan-500 to-teal-500 text-[#040f16] px-10 py-4 rounded-xl text-sm"
                                     >
                                         Start 14-Day Free Trial
                                     </a>
