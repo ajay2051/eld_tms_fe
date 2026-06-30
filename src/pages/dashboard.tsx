@@ -760,7 +760,7 @@ export default function Dashboard() {
                     </button>
                     <a href="/" className="flex items-center gap-2 group">
                         <div className="relative">
-                            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-400 to-teal-600 flex items-center justify-center shadow-md shadow-cyan-500/30">
+                            <div className="w-8 h-8 rounded-lg bg-linear-to-br from-cyan-400 to-teal-600 flex items-center justify-center shadow-md shadow-cyan-500/30">
                                 <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5">
                                     <path d="M2 8h15l3 5v3H2V8z" stroke="white" strokeWidth="1.5" strokeLinejoin="round"/>
                                     <circle cx="6.5"  cy="16" r="2" fill="white"/>
@@ -856,7 +856,7 @@ export default function Dashboard() {
                     <div className="p-4 flex-1 overflow-y-auto db-scroll">
                         {/* User card */}
                         <div className="db-glass-sm rounded-2xl p-4 mb-6">
-                            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-400/20 to-teal-600/20 border border-cyan-500/30 flex items-center justify-center mx-auto mb-2">
+                            <div className="w-10 h-10 rounded-full bg-linear-to-br from-cyan-400/20 to-teal-600/20 border border-cyan-500/30 flex items-center justify-center mx-auto mb-2">
                                 <span style={{ fontFamily:"'Syne',sans-serif" }} className="text-sm font-700 text-cyan-300">{getInitials(fullName)}</span>
                             </div>
                             <p className="text-center text-sm text-slate-200 font-medium truncate">{fullName}</p>
