@@ -427,7 +427,7 @@ export default function FleetsPage() {
                                 <div className="flex flex-col sm:flex-row gap-4">
                                     <a
                                         href="/start-trial"
-                                        className="btn-glow w-full sm:w-auto text-center font-semibold bg-gradient-to-r from-cyan-500 to-teal-500 text-[#040f16] px-8 py-4 rounded-xl text-base"
+                                        className="btn-glow w-full sm:w-auto text-center font-semibold bg-linear-to-r from-cyan-500 to-teal-500 text-[#040f16] px-8 py-4 rounded-xl text-base"
                                     >
                                         Start Free Trial
                                     </a>
@@ -488,9 +488,9 @@ export default function FleetsPage() {
                             {FEATURES.map((f, i) => (
                                 <div
                                     key={i}
-                                    className={`glass rounded-2xl p-6 card-glow group relative overflow-hidden border bg-gradient-to-br ${f.accent}`}
+                                    className={`glass rounded-2xl p-6 card-glow group relative overflow-hidden border bg-linear-to-br ${f.accent}`}
                                 >
-                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-cyan-500/5 to-transparent rounded-2xl" />
+                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-linear-to-br from-cyan-500/5 to-transparent rounded-2xl" />
 
                                     <div className="flex items-start justify-between mb-4">
                                         <div className="p-2.5 glass rounded-xl">{f.icon}</div>
@@ -587,7 +587,7 @@ export default function FleetsPage() {
                                                     <span className="text-slate-200 font-medium">{s.score}</span>
                                                 </div>
                                                 <div className="h-1.5 rounded-full bg-slate-700/60 overflow-hidden">
-                                                    <div className={`h-full rounded-full bg-gradient-to-r ${s.color}`} style={{ width: `${s.score}%` }} />
+                                                    <div className={`h-full rounded-full bg-linear-to-r ${s.color}`} style={{ width: `${s.score}%` }} />
                                                 </div>
                                             </div>
                                         ))}
@@ -658,7 +658,7 @@ export default function FleetsPage() {
                                     <StarRating count={t.rating} />
                                     <p className="text-slate-300 text-sm leading-relaxed mt-4 flex-1">"{t.quote}"</p>
                                     <div className="flex items-center gap-3 mt-6 pt-5 border-t border-slate-700/40">
-                                        <div className="w-9 h-9 rounded-full bg-gradient-to-br from-cyan-500/30 to-teal-600/30 border border-cyan-500/30 flex items-center justify-center text-xs font-bold text-cyan-300">
+                                        <div className="w-9 h-9 rounded-full bg-linear-to-br from-cyan-500/30 to-teal-600/30 border border-cyan-500/30 flex items-center justify-center text-xs font-bold text-cyan-300">
                                             {t.initials}
                                         </div>
                                         <div>
@@ -696,14 +696,14 @@ export default function FleetsPage() {
                                     key={i}
                                     className={`rounded-3xl overflow-hidden relative ${
                                         tier.highlight
-                                            ? "border border-cyan-500/40 bg-gradient-to-b from-cyan-500/10 to-transparent"
+                                            ? "border border-cyan-500/40 bg-linear-to-b from-cyan-500/10 to-transparent"
                                             : "glass border border-slate-700/40"
                                     }`}
                                     style={tier.highlight ? { boxShadow: "0 0 60px rgba(0,229,204,0.1)" } : undefined}
                                 >
                                     {tier.badge && (
                                         <div className="absolute top-0 left-0 right-0 flex justify-center">
-                                            <div className="bg-gradient-to-r from-cyan-500 to-teal-500 text-[#040f16] text-[10px] font-bold tracking-widest px-4 py-1 rounded-b-lg">
+                                            <div className="bg-linear-to-r from-cyan-500 to-teal-500 text-[#040f16] text-[10px] font-bold tracking-widest px-4 py-1 rounded-b-lg">
                                                 {tier.badge}
                                             </div>
                                         </div>
@@ -723,7 +723,7 @@ export default function FleetsPage() {
                                             href={tier.ctaHref}
                                             className={`block w-full text-center py-3 rounded-xl text-sm font-semibold transition-all ${
                                                 tier.highlight
-                                                    ? "btn-glow bg-gradient-to-r from-cyan-500 to-teal-500 text-[#040f16]"
+                                                    ? "btn-glow bg-linear-to-r from-cyan-500 to-teal-500 text-[#040f16]"
                                                     : "glass border border-slate-600/60 text-slate-300 hover:text-cyan-300 hover:border-cyan-500/40"
                                             }`}
                                         >
@@ -768,7 +768,7 @@ export default function FleetsPage() {
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <a
                                 href="/start-trial"
-                                className="btn-glow font-semibold bg-gradient-to-r from-cyan-500 to-teal-500 text-[#040f16] px-10 py-4 rounded-xl text-base"
+                                className="btn-glow font-semibold bg-linear-to-r from-cyan-500 to-teal-500 text-[#040f16] px-10 py-4 rounded-xl text-base"
                             >
                                 Start 14-Day Free Trial
                             </a>
