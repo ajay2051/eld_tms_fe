@@ -363,7 +363,7 @@ function ComplianceWidget() {
                 <span className="text-xs text-emerald-400 pb-1.5">compliance rate</span>
             </div>
             <div className="h-2 rounded-full bg-slate-700/60 overflow-hidden mb-5">
-                <div className="h-full rounded-full bg-gradient-to-r from-emerald-500 to-teal-400" style={{ width: "97%" }} />
+                <div className="h-full rounded-full bg-linear-to-r from-emerald-500 to-teal-400" style={{ width: "97%" }} />
             </div>
 
             {[
