@@ -199,11 +199,11 @@ export default function UserVerified() {
             {/* Card */}
             <div className="uv-glass relative rounded-3xl w-full max-w-md px-8 py-12 sm:px-10 text-center">
                 {/* Top glow strip */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-px bg-gradient-to-r from-transparent via-emerald-400/50 to-transparent rounded-full" />
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-px bg-linear-to-r from-transparent via-emerald-400/50 to-transparent rounded-full" />
 
                 {/* Logo */}
                 <div className="uv-fade-up uv-d1 flex items-center justify-center gap-2 mb-10">
-                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-400 to-teal-600 flex items-center justify-center shadow-md shadow-cyan-500/30">
+                    <div className="w-8 h-8 rounded-lg bg-linear-to-br from-cyan-400 to-teal-600 flex items-center justify-center shadow-md shadow-cyan-500/30">
                         <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5">
                             <path d="M2 8h15l3 5v3H2V8z" stroke="white" strokeWidth="1.5" strokeLinejoin="round" />
                             <circle cx="6.5"  cy="16" r="2" fill="white" />
