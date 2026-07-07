@@ -586,7 +586,7 @@ export default function ContactPage() {
                                         Most questions about ELD setup, HOS rules, billing, and integrations are answered in our documentation and support center — usually faster than waiting for a reply.
                                     </p>
                                     <div className="flex flex-wrap gap-3">
-                                        <a href="/docs" className="btn-glow text-sm font-semibold bg-gradient-to-r from-cyan-500 to-teal-500 text-[#040f16] px-6 py-2.5 rounded-xl">
+                                        <a href="/docs" className="btn-glow text-sm font-semibold bg-linear-to-r from-cyan-500 to-teal-500 text-[#040f16] px-6 py-2.5 rounded-xl">
                                             Browse Docs
                                         </a>
                                         <a href="/support" className="glass text-sm text-slate-300 hover:text-cyan-300 border border-slate-600/50 hover:border-cyan-500/40 px-6 py-2.5 rounded-xl transition-all">
@@ -634,7 +634,7 @@ export default function ContactPage() {
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <a
                                 href="tel:18003533801"
-                                className="btn-glow font-semibold bg-gradient-to-r from-cyan-500 to-teal-500 text-[#040f16] px-10 py-4 rounded-xl text-base"
+                                className="btn-glow font-semibold bg-linear-to-r from-cyan-500 to-teal-500 text-[#040f16] px-10 py-4 rounded-xl text-base"
                             >
                                 Call 1-800-FLEET-01
                             </a>
