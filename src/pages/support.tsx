@@ -389,7 +389,7 @@ function TicketForm() {
                     onClick={() => {
                         if (form.name && form.email && form.message) setSubmitted(true);
                     }}
-                    className="w-full btn-glow py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-teal-500 text-[#040f16] text-sm font-bold transition-opacity hover:opacity-90"
+                    className="w-full btn-glow py-3 rounded-xl bg-linear-to-r from-cyan-500 to-teal-500 text-[#040f16] text-sm font-bold transition-opacity hover:opacity-90"
                 >
                     Submit Ticket
                 </button>
@@ -566,7 +566,7 @@ export default function SupportPage() {
                                             <span className={`font-semibold ${r.color}`}>{r.time}</span>
                                         </div>
                                         <div className="h-1.5 rounded-full bg-slate-700/60 overflow-hidden">
-                                            <div className={`h-full rounded-full bg-gradient-to-r ${r.bar}`} style={{ width: `${r.pct}%` }} />
+                                            <div className={`h-full rounded-full bg-linear-to-r ${r.bar}`} style={{ width: `${r.pct}%` }} />
                                         </div>
                                     </div>
                                 ))}
@@ -727,7 +727,7 @@ export default function SupportPage() {
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <a
                                 href="tel:18003533801"
-                                className="btn-glow font-semibold bg-gradient-to-r from-cyan-500 to-teal-500 text-[#040f16] px-10 py-4 rounded-xl text-base"
+                                className="btn-glow font-semibold bg-linear-to-r from-cyan-500 to-teal-500 text-[#040f16] px-10 py-4 rounded-xl text-base"
                             >
                                 Call 1-800-FLEET-01
                             </a>
