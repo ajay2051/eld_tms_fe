@@ -577,14 +577,14 @@ export default function GetStartedPage() {
                                     onClick={() => setSelectedPlan(plan.id)}
                                     className={`rounded-3xl overflow-hidden relative cursor-pointer transition-all duration-200 ${
                                         plan.highlight
-                                            ? `border bg-gradient-to-b from-cyan-500/10 to-transparent ${plan.accentBorder}`
+                                            ? `border bg-linear-to-b from-cyan-500/10 to-transparent ${plan.accentBorder}`
                                             : `glass border ${plan.accentBorder}`
                                     } ${selectedPlan === plan.id ? "ring-2 ring-cyan-500/50 scale-[1.02]" : "hover:scale-[1.01]"}`}
                                     style={plan.accentGlow ? { boxShadow: plan.accentGlow } : undefined}
                                 >
                                     {plan.badge && (
                                         <div className="absolute top-0 left-0 right-0 flex justify-center">
-                                            <div className="bg-gradient-to-r from-cyan-500 to-teal-500 text-[#040f16] text-[10px] font-bold tracking-widest px-4 py-1 rounded-b-lg">
+                                            <div className="bg-linear-to-r from-cyan-500 to-teal-500 text-[#040f16] text-[10px] font-bold tracking-widest px-4 py-1 rounded-b-lg">
                                                 {plan.badge}
                                             </div>
                                         </div>
