@@ -450,7 +450,7 @@ export default function SupportPage() {
                                     key={i}
                                     className={`glass rounded-2xl p-6 border card-glow text-left relative overflow-hidden group hover:border-cyan-500/30 transition-all duration-200 ${ch.accent}`}
                                 >
-                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-br from-cyan-500/5 to-transparent rounded-2xl" />
+                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-linear-to-br from-cyan-500/5 to-transparent rounded-2xl" />
                                     <div className="relative">
                                         {ch.badge && (
                                             <div className="flex justify-end mb-3">
