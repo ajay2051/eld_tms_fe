@@ -522,14 +522,14 @@ export default function RegisterPage() {
             {/* Card */}
             <div className="rp-glass-card relative rounded-3xl w-full max-w-2xl my-4">
                 {/* Top glow strip */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-56 h-px bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent rounded-full" />
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-56 h-px bg-linear-to-r from-transparent via-cyan-400/50 to-transparent rounded-full" />
 
                 <div className="px-8 py-10 sm:px-10 sm:py-12">
 
                     {/* Logo */}
                     <div className="rp-slide-up rp-d1 flex items-center gap-2.5 mb-8">
                         <div className="relative">
-                            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-400 to-teal-600 flex items-center justify-center shadow-lg shadow-cyan-500/30">
+                            <div className="w-9 h-9 rounded-xl bg-linear-to-br from-cyan-400 to-teal-600 flex items-center justify-center shadow-lg shadow-cyan-500/30">
                                 <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5">
                                     <path d="M2 8h15l3 5v3H2V8z" stroke="white" strokeWidth="1.5" strokeLinejoin="round" />
                                     <circle cx="6.5"  cy="16" r="2" fill="white" />
