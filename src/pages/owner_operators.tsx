@@ -254,7 +254,7 @@ function ELDStatusWidget() {
                 </div>
                 <div className="h-2.5 rounded-full bg-slate-700/70 overflow-hidden">
                     <div
-                        className="h-full rounded-full bg-gradient-to-r from-cyan-500 to-teal-400 transition-all duration-1000"
+                        className="h-full rounded-full bg-linear-to-r from-cyan-500 to-teal-400 transition-all duration-1000"
                         style={{ width: `${Math.min(drivePercent, 100)}%` }}
                     />
                 </div>
@@ -267,7 +267,7 @@ function ELDStatusWidget() {
                     <span className="text-amber-300 font-semibold">9.5h / 14h</span>
                 </div>
                 <div className="h-2.5 rounded-full bg-slate-700/70 overflow-hidden">
-                    <div className="h-full rounded-full bg-gradient-to-r from-amber-500 to-orange-400" style={{ width: "67.8%" }} />
+                    <div className="h-full rounded-full bg-linear-to-r from-amber-500 to-orange-400" style={{ width: "67.8%" }} />
                 </div>
             </div>
 
@@ -278,7 +278,7 @@ function ELDStatusWidget() {
                     <span className="text-violet-300 font-semibold">38h / 70h</span>
                 </div>
                 <div className="h-2.5 rounded-full bg-slate-700/70 overflow-hidden">
-                    <div className="h-full rounded-full bg-gradient-to-r from-violet-500 to-purple-400" style={{ width: "54.3%" }} />
+                    <div className="h-full rounded-full bg-linear-to-r from-violet-500 to-purple-400" style={{ width: "54.3%" }} />
                 </div>
             </div>
 
@@ -372,7 +372,7 @@ export default function OwnerOperatorsPage() {
                                 <div className="flex flex-col sm:flex-row gap-4">
                                     <a
                                         href="/start-trial"
-                                        className="btn-glow w-full sm:w-auto text-center font-semibold bg-gradient-to-r from-cyan-500 to-teal-500 text-[#040f16] px-8 py-4 rounded-xl text-base"
+                                        className="btn-glow w-full sm:w-auto text-center font-semibold bg-linear-to-r from-cyan-500 to-teal-500 text-[#040f16] px-8 py-4 rounded-xl text-base"
                                     >
                                         Start Free Trial
                                     </a>
@@ -434,9 +434,9 @@ export default function OwnerOperatorsPage() {
                             {BENEFITS.map((b, i) => (
                                 <div
                                     key={i}
-                                    className={`glass rounded-2xl p-6 card-glow group relative overflow-hidden border bg-gradient-to-br ${b.accent}`}
+                                    className={`glass rounded-2xl p-6 card-glow group relative overflow-hidden border bg-linear-to-br ${b.accent}`}
                                 >
-                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-cyan-500/5 to-transparent rounded-2xl" />
+                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-linear-to-br from-cyan-500/5 to-transparent rounded-2xl" />
                                     <div className="p-2.5 glass rounded-xl inline-block mb-4">{b.icon}</div>
                                     <h3 className="font-display text-lg font-600 text-white mb-2">{b.title}</h3>
                                     <p className="text-sm text-slate-400 leading-relaxed">{b.desc}</p>
@@ -475,7 +475,7 @@ export default function OwnerOperatorsPage() {
 
                             <div className="relative grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
                                 {/* Connector line (desktop) */}
-                                <div className="hidden lg:block absolute top-8 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-cyan-500/20 via-violet-500/20 to-emerald-500/20" />
+                                <div className="hidden lg:block absolute top-8 left-[12.5%] right-[12.5%] h-px bg-linear-to-r from-cyan-500/20 via-violet-500/20 to-emerald-500/20" />
 
                                 {HOW_STEPS.map((step, i) => (
                                     <div key={i} className="relative">
@@ -516,7 +516,7 @@ export default function OwnerOperatorsPage() {
                                     <StarRating count={t.rating} />
                                     <p className="text-slate-300 text-sm leading-relaxed mt-4 flex-1">"{t.quote}"</p>
                                     <div className="flex items-center gap-3 mt-6 pt-5 border-t border-slate-700/40">
-                                        <div className="w-9 h-9 rounded-full bg-gradient-to-br from-cyan-500/30 to-teal-600/30 border border-cyan-500/30 flex items-center justify-center text-xs font-bold text-cyan-300">
+                                        <div className="w-9 h-9 rounded-full bg-linear-to-br from-cyan-500/30 to-teal-600/30 border border-cyan-500/30 flex items-center justify-center text-xs font-bold text-cyan-300">
                                             {t.initials}
                                         </div>
                                         <div>
@@ -560,7 +560,7 @@ export default function OwnerOperatorsPage() {
 
                                 <a
                                     href="/start-trial"
-                                    className="btn-glow inline-block mt-6 font-semibold bg-gradient-to-r from-cyan-500 to-teal-500 text-[#040f16] px-10 py-3.5 rounded-xl text-sm"
+                                    className="btn-glow inline-block mt-6 font-semibold bg-linear-to-r from-cyan-500 to-teal-500 text-[#040f16] px-10 py-3.5 rounded-xl text-sm"
                                 >
                                     Start 14-Day Free Trial
                                 </a>
@@ -599,7 +599,7 @@ export default function OwnerOperatorsPage() {
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <a
                                 href="/start-trial"
-                                className="btn-glow font-semibold bg-gradient-to-r from-cyan-500 to-teal-500 text-[#040f16] px-10 py-4 rounded-xl text-base"
+                                className="btn-glow font-semibold bg-linear-to-r from-cyan-500 to-teal-500 text-[#040f16] px-10 py-4 rounded-xl text-base"
                             >
                                 Start 14-Day Free Trial
                             </a>

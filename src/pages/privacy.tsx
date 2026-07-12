@@ -160,7 +160,7 @@ const POLICY_SECTIONS: PolicySection[] = [
                         { title: "Prevent fraud and abuse",     desc: "Detect and investigate unusual account activity, unauthorized API access, and potential violations of our Terms of Service." },
                     ].map((item, i) => (
                         <div key={i} className="flex gap-3 p-3 glass rounded-lg border border-slate-700/25">
-                            <div className="w-1 rounded-full bg-gradient-to-b from-cyan-500/60 to-teal-500/20 flex-shrink-0" />
+                            <div className="w-1 rounded-full bg-linear-to-b from-cyan-500/60 to-teal-500/20 flex-shrink-0" />
                             <div>
                                 <div className="text-slate-200 font-medium mb-0.5">{item.title}</div>
                                 <div>{item.desc}</div>
