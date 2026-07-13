@@ -167,7 +167,7 @@ function Logo() {
     return (
         <a href="/" className="flex items-center gap-2.5 group">
             <div className="relative">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-400 to-teal-600 flex items-center justify-center shadow-lg shadow-cyan-500/30">
+                <div className="w-8 h-8 rounded-lg bg-linear-to-br from-cyan-400 to-teal-600 flex items-center justify-center shadow-lg shadow-cyan-500/30">
                     <svg viewBox="0 0 24 24" fill="none" className="w-5 h-5">
                         <path d="M2 8h15l3 5v3H2V8z" stroke="white" strokeWidth="1.5" strokeLinejoin="round" />
                         <circle cx="6.5"  cy="16" r="2" fill="white" />
@@ -264,7 +264,7 @@ function LoadRow({ load, onClick, selected }: { load: Load; onClick: () => void;
                 <div className="flex items-center gap-2">
                     <div className="flex-1 h-1.5 rounded-full bg-slate-700/70 overflow-hidden">
                         <div
-                            className={`h-full rounded-full bg-gradient-to-r ${PROGRESS_GRADIENT[load.status]}`}
+                            className={`h-full rounded-full bg-linear-to-r ${PROGRESS_GRADIENT[load.status]}`}
                             style={{ width: `${load.progress}%`, transition: "width 0.8s ease" }}
                         />
                     </div>
@@ -334,7 +334,7 @@ function DetailPanel({ load, onClose }: { load: Load; onClose: () => void }) {
                         <div className="text-xs text-slate-500">{load.departure}</div>
                     </div>
                     <div className="flex-1 mx-4 relative">
-                        <div className="h-px bg-gradient-to-r from-cyan-500/30 via-cyan-400/60 to-cyan-500/30 relative">
+                        <div className="h-px bg-linear-to-r from-cyan-500/30 via-cyan-400/60 to-cyan-500/30 relative">
                             <div
                                 className="absolute top-1/2 -translate-y-1/2 h-2.5 w-2.5 rounded-full bg-cyan-400 shadow-lg shadow-cyan-500/60"
                                 style={{ left: `${load.progress}%`, transform: "translate(-50%, -50%)" }}
