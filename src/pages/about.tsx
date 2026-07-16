@@ -274,7 +274,7 @@ function MissionWidget() {
                         <span className={`font-semibold font-display ${row.text}`}>{row.value}</span>
                     </div>
                     <div className="h-1.5 rounded-full bg-slate-700/60 overflow-hidden">
-                        <div className={`h-full rounded-full bg-gradient-to-r ${row.color}`} style={{ width: `${row.bar}%` }} />
+                        <div className={`h-full rounded-full bg-linear-to-r ${row.color}`} style={{ width: `${row.bar}%` }} />
                     </div>
                 </div>
             ))}
@@ -325,7 +325,7 @@ export default function AboutPage() {
                             <div className="flex flex-wrap gap-4">
                                 <a
                                     href="/careers"
-                                    className="btn-glow font-semibold bg-gradient-to-r from-cyan-500 to-teal-500 text-[#040f16] px-7 py-3.5 rounded-xl text-sm"
+                                    className="btn-glow font-semibold bg-linear-to-r from-cyan-500 to-teal-500 text-[#040f16] px-7 py-3.5 rounded-xl text-sm"
                                 >
                                     We're Hiring
                                 </a>
@@ -429,7 +429,7 @@ export default function AboutPage() {
 
                         <div className="relative max-w-3xl mx-auto">
                             {/* Vertical line */}
-                            <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-cyan-500/30 via-violet-500/20 to-transparent" />
+                            <div className="absolute left-6 top-0 bottom-0 w-px bg-linear-to-b from-cyan-500/30 via-violet-500/20 to-transparent" />
 
                             <div className="space-y-8">
                                 {MILESTONES.map((m, i) => (
@@ -474,7 +474,7 @@ export default function AboutPage() {
                             {TEAM_MEMBERS.map((member, i) => (
                                 <div key={i} className="glass rounded-2xl p-6 border border-slate-700/30 card-glow group hover:border-cyan-500/25 transition-all duration-200">
                                     <div className="flex items-center gap-4 mb-4">
-                                        <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${member.accent} border flex items-center justify-center font-display text-lg font-700 flex-shrink-0`}>
+                                        <div className={`w-14 h-14 rounded-2xl bg-linear-to-br ${member.accent} border flex items-center justify-center font-display text-lg font-700 flex-shrink-0`}>
                                             {member.initials}
                                         </div>
                                         <div>
@@ -497,7 +497,7 @@ export default function AboutPage() {
                                 </p>
                                 <a
                                     href="/careers"
-                                    className="btn-glow inline-block font-semibold bg-gradient-to-r from-cyan-500 to-teal-500 text-[#040f16] px-8 py-3 rounded-xl text-sm"
+                                    className="btn-glow inline-block font-semibold bg-linear-to-r from-cyan-500 to-teal-500 text-[#040f16] px-8 py-3 rounded-xl text-sm"
                                 >
                                     View Open Roles
                                 </a>
@@ -604,7 +604,7 @@ export default function AboutPage() {
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <a
                                 href="/start-trial"
-                                className="btn-glow font-semibold bg-gradient-to-r from-cyan-500 to-teal-500 text-[#040f16] px-10 py-4 rounded-xl text-base"
+                                className="btn-glow font-semibold bg-linear-to-r from-cyan-500 to-teal-500 text-[#040f16] px-10 py-4 rounded-xl text-base"
                             >
                                 Start Free Trial
                             </a>
