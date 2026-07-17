@@ -267,7 +267,7 @@ function PostRow({ post }: { post: BlogPost }) {
             className="glass rounded-xl p-5 border border-slate-700/30 card-glow group hover:border-cyan-500/25 transition-all duration-200 flex gap-5 items-start"
         >
             {/* Left accent bar */}
-            <div className="w-1 self-stretch rounded-full bg-gradient-to-b from-cyan-500/60 to-teal-500/20 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="w-1 self-stretch rounded-full bg-linear-to-b from-cyan-500/60 to-teal-500/20 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity" />
 
             <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-2 flex-wrap">
@@ -521,7 +521,7 @@ export default function BlogPage() {
                             <div className="glass-strong rounded-xl p-5 border border-cyan-500/15 relative overflow-hidden">
                                 <div className="absolute top-0 right-0 w-24 h-24 bg-cyan-500/8 rounded-full blur-[40px]" />
                                 <div className="relative">
-                                    <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-500/20 to-teal-600/20 border border-cyan-500/30 flex items-center justify-center mb-3">
+                                    <div className="w-8 h-8 rounded-lg bg-linear-to-br from-cyan-500/20 to-teal-600/20 border border-cyan-500/30 flex items-center justify-center mb-3">
                                         <svg viewBox="0 0 16 16" fill="none" className="w-4 h-4 text-cyan-400">
                                             <path d="M2 4h12v8a1 1 0 01-1 1H3a1 1 0 01-1-1V4z" stroke="currentColor" strokeWidth="1.2" />
                                             <path d="M2 4l6 5 6-5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />

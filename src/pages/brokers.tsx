@@ -550,9 +550,9 @@ export default function BrokersPage() {
                             {FEATURES.map((f, i) => (
                                 <div
                                     key={i}
-                                    className={`glass rounded-2xl p-6 card-glow group relative overflow-hidden border bg-gradient-to-br ${f.accent}`}
+                                    className={`glass rounded-2xl p-6 card-glow group relative overflow-hidden border bg-linear-to-br ${f.accent}`}
                                 >
-                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-cyan-500/5 to-transparent rounded-2xl" />
+                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-linear-to-br from-cyan-500/5 to-transparent rounded-2xl" />
 
                                     <div className="flex items-start justify-between mb-4">
                                         <div className="p-2.5 glass rounded-xl">{f.icon}</div>
@@ -600,7 +600,7 @@ export default function BrokersPage() {
                             </div>
 
                             <div className="relative grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                                <div className="hidden lg:block absolute top-8 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-cyan-500/20 via-violet-500/20 to-emerald-500/20" />
+                                <div className="hidden lg:block absolute top-8 left-[12.5%] right-[12.5%] h-px bg-linear-to-r from-cyan-500/20 via-violet-500/20 to-emerald-500/20" />
 
                                 {WORKFLOW_STEPS.map((step, i) => (
                                     <div key={i} className="relative">
@@ -844,7 +844,7 @@ export default function BrokersPage() {
                                             href={tier.ctaHref}
                                             className={`block w-full text-center py-3 rounded-xl text-sm font-semibold transition-all ${
                                                 tier.highlight
-                                                    ? "btn-glow bg-gradient-to-r from-cyan-500 to-teal-500 text-[#040f16]"
+                                                    ? "btn-glow bg-linear-to-r from-cyan-500 to-teal-500 text-[#040f16]"
                                                     : "glass border border-slate-600/60 text-slate-300 hover:text-cyan-300 hover:border-cyan-500/40"
                                             }`}
                                         >
@@ -889,7 +889,7 @@ export default function BrokersPage() {
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <a
                                 href="/start-trial"
-                                className="btn-glow font-semibold bg-gradient-to-r from-cyan-500 to-teal-500 text-[#040f16] px-10 py-4 rounded-xl text-base"
+                                className="btn-glow font-semibold bg-linear-to-r from-cyan-500 to-teal-500 text-[#040f16] px-10 py-4 rounded-xl text-base"
                             >
                                 Start 14-Day Free Trial
                             </a>
