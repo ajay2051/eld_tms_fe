@@ -1,6 +1,7 @@
 # FleetPulse TMS — Frontend
 
-A trucking management and ELD (Electronic Logging Device) compliance platform built with **React + TypeScript + Tailwind CSS**. Drivers can plan routes on a live map, fill FMCSA-compliant driver daily logs, and admins can monitor everything from a central dashboard.
+A trucking management and ELD (Electronic Logging Device) compliance platform built with **React + TypeScript + Tailwind CSS**. 
+Drivers can plan routes on a live map, fill FMCSA-compliant driver daily logs, and admins can monitor everything from a central dashboard.
 
 ---
 
@@ -128,13 +129,15 @@ The driver log is linked to a route via a foreign key. The correct flow is:
 Email + password login with Google/Microsoft social buttons (UI only), show/hide password, remember me checkbox, field-level and server error display.
 
 ### RegisterPage `/register`
-Full registration form with all Django serializer validations mirrored on the frontend: name length/special chars, email regex, password strength (8–16 chars, uppercase, special char), role dropdown (Driver / Admin), optional passport field. 5-second countdown redirect to login on success.
+Full registration form with all Django serializer validations mirrored on the frontend: name length/special chars, email regex, 
+password strength (8–16 chars, uppercase, special char), role dropdown (Driver / Admin), optional passport field. 5-second countdown redirect to login on success.
 
 ### ForgotPassword `/forgot-password`
 Email input → POST to backend → animated envelope success state with step-by-step instructions.
 
 ### ForgotPasswordConfirm `/forgot-password-confirm/`
-Reads `?user_id=&token=` from query params (sent by Django email template). Password strength bar, live requirements checklist, match indicator. Shows invalid-link state if params are missing.
+Reads `?user_id=&token=` from query params (sent by Django email template). Password strength bar, live requirements checklist, match indicator. 
+Shows invalid-link state if params are missing.
 
 ### RoutePage `/route`
 Full-screen Leaflet map with sidebar controls:
@@ -165,7 +168,8 @@ Post email-verification success page with animated checkmark, 3-step status list
 
 ## Key Design Decisions
 
-**No `globals.css`** — Each page injects its own scoped `<style>` tag on mount and removes it on unmount. CSS class names are prefixed per page (`lp-`, `rp-`, `fp-`, `dl-`, `db-`) to prevent collisions.
+**No `globals.css`** — Each page injects its own scoped `<style>` tag on mount and removes it on unmount. 
+CSS class names are prefixed per page (`lp-`, `rp-`, `fp-`, `dl-`, `db-`) to prevent collisions.
 
 **Bare routes** — Pages with their own full-screen layouts (login, register, map, dashboard, etc.) are excluded from the shared `<Navbar>` / `<Footer>` wrapper in `App.tsx`.
 
