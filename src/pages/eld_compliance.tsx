@@ -431,7 +431,7 @@ function DashboardPreview(): JSX.Element {
                 style={{ background: "#040f16" }}
             >
                 <div className="flex items-center gap-2.5">
-                    <div className="w-6 h-6 rounded bg-gradient-to-br from-cyan-400 to-teal-600 flex items-center justify-center">
+                    <div className="w-6 h-6 rounded bg-linear-to-br from-cyan-400 to-teal-600 flex items-center justify-center">
                         <svg viewBox="0 0 24 24" fill="none" className="w-3.5 h-3.5">
                             <path d="M2 8h15l3 5v3H2V8z" stroke="white" strokeWidth="1.5" strokeLinejoin="round" />
                             <circle cx="6.5"  cy="16" r="2" fill="white" />
