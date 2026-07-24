@@ -61,7 +61,7 @@ function CalloutBox({
 function ItemRow({ title, desc }: { title: string; desc: string }) {
     return (
         <div className="flex gap-3 p-3 glass rounded-lg border border-slate-700/25">
-            <div className="w-1 rounded-full bg-gradient-to-b from-cyan-500/60 to-teal-500/10 flex-shrink-0" />
+            <div className="w-1 rounded-full bg-linear-to-b from-cyan-500/60 to-teal-500/10 flex-shrink-0" />
             <div>
                 <div className="text-slate-200 font-medium text-sm mb-0.5">{title}</div>
                 <div className="text-xs text-slate-400 leading-relaxed">{desc}</div>
