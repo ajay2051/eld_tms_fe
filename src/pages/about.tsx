@@ -401,7 +401,7 @@ export default function AboutPage() {
                         <div className="grid sm:grid-cols-2 gap-5">
                             {VALUES.map((v, i) => (
                                 <div key={i} className={`glass rounded-2xl p-7 border card-glow group relative overflow-hidden ${v.accent}`}>
-                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-cyan-500/5 to-transparent rounded-2xl" />
+                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-linear-to-br from-cyan-500/5 to-transparent rounded-2xl" />
                                     <div className="p-2.5 glass rounded-xl inline-block mb-4">{v.icon}</div>
                                     <h3 className="font-display text-lg font-700 text-white mb-3">{v.title}</h3>
                                     <p className="text-sm text-slate-400 leading-relaxed">{v.desc}</p>
