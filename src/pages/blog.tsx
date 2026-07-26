@@ -217,7 +217,7 @@ function FeaturedCard({ post }: { post: BlogPost }) {
             className="glass rounded-2xl overflow-hidden border border-slate-700/40 card-glow group hover:border-cyan-500/30 transition-all duration-200 flex flex-col"
         >
             {/* Decorative header band */}
-            <div className="relative h-40 bg-gradient-to-br from-[#061d2a] to-[#040f16] overflow-hidden flex-shrink-0">
+            <div className="relative h-40 bg-linear-to-br from-[#061d2a] to-[#040f16] overflow-hidden flex-shrink-0">
                 <div className="absolute inset-0 grid-bg opacity-60" />
                 <div className="absolute top-[-40px] right-[-40px] w-48 h-48 rounded-full bg-cyan-500/8 blur-[60px]" />
                 <div className="absolute bottom-[-20px] left-[-20px] w-32 h-32 rounded-full bg-violet-500/8 blur-[50px]" />
