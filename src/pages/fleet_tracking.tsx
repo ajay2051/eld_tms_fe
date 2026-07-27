@@ -239,7 +239,7 @@ function TruckRow({ truck, selected, onClick }: TruckRowProps) {
                 <div className="flex-shrink-0 text-right">
                     <div className="text-xs text-slate-300">{truck.speed > 0 ? `${truck.speed} mph` : "—"}</div>
                     <div className="mt-1 w-14 h-1 rounded-full bg-slate-700">
-                        <div className={`h-full rounded-full bg-gradient-to-r ${fuelColor}`} style={{ width: `${truck.fuel}%` }} />
+                        <div className={`h-full rounded-full bg-linear-to-r ${fuelColor}`} style={{ width: `${truck.fuel}%` }} />
                     </div>
                     <div className="text-[9px] text-slate-500 mt-0.5">{truck.fuel}% fuel</div>
                 </div>
