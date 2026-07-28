@@ -310,7 +310,7 @@ function DetailPanel({ truck, onClose }: DetailPanelProps) {
                     <span className={truck.fuel < 20 ? "text-rose-400 font-semibold" : "text-slate-300"}>{truck.fuel}%</span>
                 </div>
                 <div className="h-2 rounded-full bg-slate-700/60">
-                    <div className={`h-full rounded-full bg-gradient-to-r ${fuelColor} transition-all`} style={{ width: `${truck.fuel}%` }} />
+                    <div className={`h-full rounded-full bg-linear-to-r ${fuelColor} transition-all`} style={{ width: `${truck.fuel}%` }} />
                 </div>
                 {truck.fuel < 20 && (
                     <div className="mt-1.5 text-[10px] text-rose-400 flex items-center gap-1">
