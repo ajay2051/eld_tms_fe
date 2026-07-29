@@ -414,7 +414,7 @@ export default function FleetTrackingPage() {
                         <div className="text-xs font-medium text-white">Andrew Martin</div>
                         <div className="text-[10px] text-slate-500">Admin</div>
                     </div>
-                    <div className="w-7 h-7 rounded-full bg-gradient-to-br from-cyan-500 to-teal-600 flex items-center justify-center text-xs font-bold text-[#040f16]">
+                    <div className="w-7 h-7 rounded-full bg-linear-to-br from-cyan-500 to-teal-600 flex items-center justify-center text-xs font-bold text-[#040f16]">
                         AM
                     </div>
                 </div>
