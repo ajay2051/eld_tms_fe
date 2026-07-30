@@ -343,7 +343,7 @@ function DetailPanel({ truck, onClose }: DetailPanelProps) {
                 <button className="text-xs text-slate-300 border border-slate-600/50 rounded-lg py-2 hover:border-cyan-500/40 hover:text-cyan-300 transition-colors">
                     Message Driver
                 </button>
-                <button className="text-xs font-semibold bg-gradient-to-r from-cyan-500 to-teal-500 text-[#040f16] rounded-lg py-2">
+                <button className="text-xs font-semibold bg-linear-to-r from-cyan-500 to-teal-500 text-[#040f16] rounded-lg py-2">
                     View Full Log
                 </button>
             </div>
