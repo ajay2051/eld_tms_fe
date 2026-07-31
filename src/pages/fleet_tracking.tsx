@@ -392,7 +392,7 @@ export default function FleetTrackingPage() {
             {/* Header */}
             <header className="relative z-50 border-b border-cyan-500/10 bg-[#040f16]/90 backdrop-blur-xl px-6 h-14 flex items-center justify-between">
                 <div className="flex items-center gap-2.5">
-                    <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-400 to-teal-600 flex items-center justify-center shadow-lg shadow-cyan-500/30">
+                    <div className="w-7 h-7 rounded-lg bg-linear-to-br from-cyan-400 to-teal-600 flex items-center justify-center shadow-lg shadow-cyan-500/30">
                         <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4">
                             <path d="M2 8h15l3 5v3H2V8z" stroke="white" strokeWidth="1.5" strokeLinejoin="round" />
                             <circle cx="6.5"  cy="16" r="2" fill="white" />
