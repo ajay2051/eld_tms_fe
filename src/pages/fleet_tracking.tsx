@@ -442,7 +442,7 @@ export default function FleetTrackingPage() {
                     {STAT_CARDS.map((s, i) => (
                         <div
                             key={i}
-                            className="rounded-xl border border-white/[0.06] bg-white/[0.03] px-4 py-4 flex items-center gap-3 hover:border-cyan-500/20 transition-colors"
+                            className="rounded-xl border border-white/6 bg-white/3 px-4 py-4 flex items-center gap-3 hover:border-cyan-500/20 transition-colors"
                         >
                             <div className="text-2xl">{s.icon}</div>
                             <div>
