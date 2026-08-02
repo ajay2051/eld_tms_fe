@@ -541,7 +541,7 @@ export default function FleetTrackingPage() {
                         {selectedTruck !== null ? (
                             <DetailPanel truck={selectedTruck} onClose={() => setSelectedTruckId(null)} />
                         ) : (
-                            <div className="glass-strong rounded-2xl border border-white/[0.06] h-full min-h-[300px] flex flex-col items-center justify-center gap-3 p-8 text-center">
+                            <div className="glass-strong rounded-2xl border border-white/6 h-full min-h-75 flex flex-col items-center justify-center gap-3 p-8 text-center">
                                 <div className="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center">
                                     <svg viewBox="0 0 24 24" fill="none" className="w-6 h-6 text-cyan-400">
                                         <path d="M2 8h15l3 5v3H2V8z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
