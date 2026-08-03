@@ -514,8 +514,8 @@ export default function FleetTrackingPage() {
                         </div>
 
                         {/* Truck list */}
-                        <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] overflow-hidden">
-                            <div className="flex items-center justify-between px-4 py-3 border-b border-white/[0.04]">
+                        <div className="rounded-2xl border border-white/6 bg-white/2 overflow-hidden">
+                            <div className="flex items-center justify-between px-4 py-3 border-b border-white/4">
                                 <span className="text-xs font-medium text-slate-300 uppercase tracking-wider">Vehicle List</span>
                                 <span className="text-[10px] text-slate-500">{filtered.length} of {TRUCKS.length} trucks</span>
                             </div>
