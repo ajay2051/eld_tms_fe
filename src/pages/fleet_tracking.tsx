@@ -508,7 +508,7 @@ export default function FleetTrackingPage() {
                                     placeholder="Search truck ID or driver..."
                                     value={searchQ}
                                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchQ(e.target.value)}
-                                    className="w-full pl-9 pr-4 py-2 text-sm bg-white/[0.03] border border-white/[0.06] rounded-xl text-slate-300 placeholder-slate-600 focus:outline-none focus:border-cyan-500/40 focus:bg-cyan-500/5 transition-all"
+                                    className="w-full pl-9 pr-4 py-2 text-sm bg-white/3 border border-white/6 rounded-xl text-slate-300 placeholder-slate-600 focus:outline-none focus:border-cyan-500/40 focus:bg-cyan-500/5 transition-all"
                                 />
                             </div>
                         </div>
