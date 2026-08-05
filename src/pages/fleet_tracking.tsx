@@ -478,7 +478,7 @@ export default function FleetTrackingPage() {
 
                         {/* Filter + search */}
                         <div className="flex flex-col sm:flex-row gap-3">
-                            <div className="flex items-center gap-1.5 bg-white/[0.03] border border-white/[0.06] rounded-xl p-1">
+                            <div className="flex items-center gap-1.5 bg-white/3 border border-white/6 rounded-xl p-1">
                                 {FILTER_OPTIONS.map((f) => (
                                     <button
                                         key={f}
