@@ -420,11 +420,11 @@ export default function FleetTrackingPage() {
                 </div>
             </header>
 
-            <main className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 py-6">
+            <main className="relative z-10 max-w-350 mx-auto px-4 sm:px-6 py-6">
 
                 {/* Breadcrumb */}
                 <div className="flex items-center gap-2 mb-5">
-                    <div className="inline-flex items-center gap-1.5 text-xs bg-white/[0.05] border border-cyan-500/20 rounded-full px-3 py-1">
+                    <div className="inline-flex items-center gap-1.5 text-xs bg-white/5 border border-cyan-500/20 rounded-full px-3 py-1">
                         <div className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
                         <span className="text-cyan-300">Fleet Tracking</span>
                     </div>
@@ -462,7 +462,7 @@ export default function FleetTrackingPage() {
 
                         {/* Map */}
                         <div className="rounded-2xl border border-cyan-500/15 overflow-hidden" style={{ height: 300 }}>
-                            <div className="flex items-center justify-between px-4 py-2.5 border-b border-cyan-500/10 bg-white/[0.02]">
+                            <div className="flex items-center justify-between px-4 py-2.5 border-b border-cyan-500/10 bg-white/2">
                                 <div className="flex items-center gap-2">
                                     <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                                     <span className="text-xs font-medium text-slate-300">Live Fleet Map</span>
