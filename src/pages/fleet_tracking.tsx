@@ -295,7 +295,7 @@ function DetailPanel({ truck, onClose }: DetailPanelProps) {
             {/* Stats grid */}
             <div className="grid grid-cols-2 gap-3">
                 {statRows.map((s) => (
-                    <div key={s.label} className="rounded-xl bg-white/[0.04] border border-white/[0.06] px-3 py-2.5">
+                    <div key={s.label} className="rounded-xl bg-white/4 border border-white/6 px-3 py-2.5">
                         <div className="text-[10px] text-slate-500 uppercase tracking-wider">{s.label}</div>
                         <div className="text-base font-semibold text-white mt-0.5">{s.value}</div>
                         <div className="text-[10px] text-slate-500">{s.sub}</div>
