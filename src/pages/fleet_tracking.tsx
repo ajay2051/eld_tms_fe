@@ -232,7 +232,7 @@ function TruckRow({ truck, selected, onClick }: TruckRowProps) {
                 </div>
 
                 <div className="hidden md:block text-right flex-shrink-0">
-                    <div className="text-xs text-slate-300 truncate max-w-[120px]">{truck.load}</div>
+                    <div className="text-xs text-slate-300 truncate max-w-30">{truck.load}</div>
                     <div className="text-[10px] text-slate-500">ETA {truck.eta}</div>
                 </div>
 
